@@ -1,0 +1,23 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// function scss
+// 提供所有的基礎功能包括：變數設置，css3前綴填充，@media，基礎mixin，網格化grid
+// 預設不會解析出任何樣式
+//-----------------------------------------------------
+
+//-----------------------------------------------------
+// author: Jerry jnnnnj(http://jnnnnj.com)
+// version: 0.1
+// time: 2014-05-04
+// url: https://github.com/jerrysdesign/sassToolBox/ http://sasstoolbox.info/
+//-----------------------------------------------------
+
+
+// 導入所有功能類相關文件
+//-----------------------------------------------------
+
+@import "core/setting";
+@import "core/css3";
+@import "core/media-queries";
+@import "core/mixin";
+@import "core/grid";

@@ -1,0 +1,96 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// setting scss
+//-----------------------------------------------------
+
+
+// 開關設置
+//-----------------------------------------------------
+$lte7: true !default; //是否兼容ie6-7
+$filter: false !default; //是否為ie6-8開啟css3濾鏡兼容，常用於漸變背景
+$printStyleSwitch: false !default; //是否開啟打印樣式
+
+
+// font相關
+//-----------------------------------------------------
+$baseFontSize: 14px !default;
+$baseLineHeight: 1.5 !default;
+$baseFontFamily: "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
+$fontCn: "SimSun"; //宋體
+$fontYaHei: "Microsoft Yahei"; //微軟雅黑
+$fontHeiTi: "SimHei"; //黑體
+
+
+// 元素上下間距
+//-----------------------------------------------------
+$baseGap: 20px !default;
+
+
+// 基本顏色
+// color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
+// lighten($color, $amount)
+// darken($color, $amount)
+// opacify($color, $amount)
+// mix($color1, $color2[, $amount])
+//-----------------------------------------------------
+$black: #000 !default;
+$grayDarker: #333 !default;
+$grayDark: #999 !default;
+$gray: #ccc !default;
+$grayLight: #f5f5f5 !default;
+$white: #fff !default;
+
+$red: #cc3300 !default;
+$blue: #00A3CF !default;
+$blueDark: #0064cd !default;
+$orange: #F47837 !default;
+$green: #51B148 !default;
+$yellow: #ffc40d !default;
+$pink: #c3325f !default;
+$purple: #7a43b6 !default;
+
+$primary: #0078E7 !default;//主色
+
+
+// link
+//-----------------------------------------------------
+// 如果只有一個值則滑過的值為這個值的darken 5%，如果
+// 有兩個值則第二個值為滑過的值
+$linkColor: #08c !default;
+
+
+// scaffolding
+//-----------------------------------------------------
+$bodyBgColor: $white !default;
+$textColor: $grayDarker !default;
+
+
+// placeholder
+//-----------------------------------------------------
+// 變量分別為：是否輸出表單的佔位符placeholder樣式，文本色
+$placeholder: true $gray !default;
+
+
+// 交互配色
+// 警告，錯誤，成功，提示
+//-----------------------------------------------------
+// 每個變量都有三個顏色值，分別為：文本色，背景色，邊框色
+$warningColor: #514721 #FFF6BF #FFD324 !default;
+$errorColor: #8A1F11 #FBE3E4 #FBC2C4 !default;
+$successColor: #264409 #E6EFC2 #C6D880 !default;
+$infoColor: #205791 #D5EDF8 #92CAE4 !default;
+
+
+// radius
+//-----------------------------------------------------
+$baseRadius: 5px !default;
+$smallRadius: 3px !default;
+
+
+// z-index
+//-----------------------------------------------------
+$zindexDropdown: 1000 !default;
+$zindexFixedTopbar: 1010 !default;
+$zindexTooltip: 1020 !default;
+$zindexAlert: 1030 !default;
+$zindexModal: 1100 !default;

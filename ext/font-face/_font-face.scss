@@ -1,0 +1,83 @@
+@charset "UTF-8";
+//-----------------------------------------------------
+// font-face scss
+// http://fontawesome.io/
+// 支持ie8+
+//-----------------------------------------------------
+
+
+//-----------------------------------------------------
+// 如需要全部的icon class，設置$fontClassAllSwitch為true即可
+// 如輸出單個icon class，直接調用@include font-icon($name,fontSearch($name));
+// 如要輸出大於或等於2個icon，覆寫$fontClassoutput即可，如$fontClassoutput:glass music search heart;則輸出這四個icon的class
+//-----------------------------------------------------
+
+
+// 導入變量
+@import "variables";
+
+
+// 申明@font-face
+@include font-face($fontFamily, $fontFilePath);
+
+
+// 定義mixin等基礎功能
+//-----------------------------------------------------
+
+// 基礎樣式
+%font-basic{
+  display: inline-block;
+  font-family: $fontFamily;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothi​​ng: antialiased;
+  -moz-osx-font-smoothi​​ng: grayscale;
+}
+
+
+// 傳入單個名字，以在所有的$ClassAll變量中查詢到其對應的內容
+// 如glass，查詢到的就是"\f000"，music對應的就是"\f001"
+@function fontSearch($needle, $sea: $fontClassAll){
+  @each $item in $sea {
+    $index: index($item, $needle);
+
+    @if $index {
+      $return: if($index == 1, 2, $index);
+      @return nth($item,$return);
+    }
+  }
+  @warn "no #{$needle} in the variables, please check it!";
+  @return false;
+}
+
+
+// icon mixin
+@mixin font-icon($class){
+  .#{$fontClassPrefix}-#{$class}{
+    @extend %font-basic;
+
+    &:before{
+      content: fontSearch($class);
+      @extend %box-sizing-border;
+    }
+  }
+}
+
+
+// 全部輸出
+@if $fontClassAllSwitch {
+  @each $class in $fontClassAll {
+    $name: nth($class,1);
+    $content: nth($class,2);
+
+    @include font-icon($name,$content);
+  }
+} @else {
+  // 部分輸出的class
+  @if length($fontClassoutput) >= 2{
+    @each $class in $fontClassoutput{
+      @include font-icon($class);
+    }
+  }
+}
