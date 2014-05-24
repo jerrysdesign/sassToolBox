@@ -3,9 +3,9 @@
 // typography scss
 //-----------------------------------------------------
 
-// 變量
+// 變數
 //-----------------------------------------------------
-$article: true article !default; //第一個變量為是否開啟文章詳細頁樣式，第二個為默認的class
+$article: true article !default; //第一個變數為是否開啟文章詳細頁樣式，第二個為預設的class
 
 
 // Blockquotes
@@ -55,8 +55,8 @@ hr {
 
 
 // article style
-// 詳細頁文章內容樣式，通過變量$articleStyleSwitch來控制輸出
-// 詳細頁內容的默認的class為.article，可通過變量$articleClass來設置
+// 詳細頁文章內容樣式，通過變數$articleStyleSwitch來控制輸出
+// 詳細頁內容的預設的class為.article，可通過變數$articleClass來設置
 //-----------------------------------------------------
 @if nth($article,1){
   .#{nth($article,2)}{

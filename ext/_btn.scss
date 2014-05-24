@@ -14,7 +14,7 @@ $btnSizeClass:        () !default; //(small 5px 21px 12px) 每個括號為一組
 $btnColorClass:       () !default; //(primary $primary #fff) 每個括號為一組，裡面三個參數分別為：class 背景色文本色
 
 // 開關按鈕
-$btnBgGradientSwitch: false !default;//是否啟用漸變背景
+$btnBgGradientSwitch: false !default;//是否啟用漸層背景
 
 
 
@@ -31,7 +31,7 @@ $btnBgGradientSwitch: false !default;//是否啟用漸變背景
 }
 
 // btn-gradient
-// 半透明到全透明的白色漸變，通過設置不同的背景色來表示不同的漸變
+// 半透明到全透明的白色漸層，通過設置不同的背景色來表示不同的漸層
 %btn-gradient {
   box-shadow: 0 1px 1px rgba(255, 255, 255, 0.5) inset, 0 0 1px rgba(255, 255, 255, 0.5) inset;
   @extend %gradient-linear-light;
@@ -82,7 +82,7 @@ $btnBgGradientSwitch: false !default;//是否啟用漸變背景
   @include btn-color;
 }
 
-// 如果啟用漸變背景，引入%btn-gradient；
+// 如果啟用漸層背景，引入%btn-gradient；
 @if $btnBgGradientSwitch {
   .#{$btnBaseClass}, .#{$btnFormBaseClass}{
     @extend %btn-gradient;

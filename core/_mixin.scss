@@ -3,12 +3,12 @@
 // mixin scss
 // 包括常用的mixin，%及@function
 // mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
-// %，通过@extend调用，样式通过组合申明的方式使用，适用于不传参数的代码片段  
+// %，通过@extend調用，樣式通過組合申明方的式使用，是用於不傳遞參數的原始碼片段
 // @function，返回一个值，用于调用
 //-----------------------------------------------------
 
 // mixin & %
-// 既定义了mixin也定义了%，根据需求使用@include或@extend调用
+// 既定義了mixin也定義了%，根据需求使用@include或@extend調用
 //-----------------------------------------------------
 
 // inline-block
@@ -28,7 +28,7 @@
 }
 
 // Center-align a block level element
-// block得有宽度margin左右为auto才能居中
+// block需有寬度margin左右設定auto才能居中
 @mixin center-block ($extend:true) {
   @if $extend {
     @extend %center-block;
@@ -53,7 +53,7 @@
 }
 
 // clearfix
-// 闭合子元素的浮动
+// 閉合子元素的浮動
 @mixin clearfix ($extend:true) {
   @if $extend {
     @extend %clearfix;
@@ -76,7 +76,7 @@
 }
 
 // Hide from both screenreaders and browsers: h5bp.com/u
-// 既隐藏于视觉也隐藏于屏幕浏览器
+// 隱藏於視覺也隱藏於顯示器
 @mixin hidden ($extend:true) {
   @if $extend {
     @extend %hidden;
@@ -90,7 +90,7 @@
 }
 
 // Hide only visually, but have it available for screenreaders
-// 只隐藏于视觉，屏幕浏览器可以阅读
+// 只隱藏視覺，不隱藏於顯示器
 @mixin visually-hidden ($extend:true) {
   @if $extend {
     @extend %visually-hidden;
@@ -115,11 +115,11 @@
   @include ul-has-style;
 }
 
-// 图片替换文字
-// 高级浏览器直接2就可以
-// 原生7,8不支持color的transparent，所以采用1;
-// ie6用1会有一条细线，所以采用3
-// 如果要兼容ie6，使用的时候请确定元素设置高度。
+// 文字替換圖片時
+// 表準瀏覽器直接2就可以
+// 原生7,8不支援color的transparent，所以采用1;
+// ie6用1會有一條细线，所以采用3
+// 如果要相容ie6，使用的时候務必確定元素設置高度。
 @mixin ir($height:99){
   font: 0/0 a; //1
   text-shadow: none;
@@ -136,7 +136,7 @@
 }
 
 // Text overflow
-// 元素可以设置宽度才可应用省略号
+// 元素可以設置寬度才可應用省略符號
 %ellipsis-basic{
   overflow: hidden;
   text-overflow: ellipsis;
@@ -148,7 +148,7 @@
 }
 
 // Opacity
-// lte8使用filter兼容
+// lte8使用filter相容
 @mixin opacity($opacity:50) {
   opacity: $opacity / 100;
   @if $filter{
@@ -205,7 +205,7 @@
 }
 
 // disabled
-// 禁用样式，加!important
+// 禁用式，加!important
 @mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
   background-color: $bgColor !important;
   color: $textColor !important;
@@ -215,7 +215,7 @@
   @include disabled;
 }
 
-// 水平间隔线，适用于行列表
+// 水平間隔線，適用於行列表
 @mixin horizontal-line($border:1px dashed $gray, $padding:10px){
   border-bottom:$border;
   padding-top:$padding;
@@ -227,7 +227,7 @@
 
 
 // mixin
-// 只定义了mixin，所以只能通过@include来调用
+// 只定義了mixin，所以只能通過@include來調用
 //-----------------------------------------------------
 
 // rem
@@ -267,7 +267,7 @@
   }
 }
 
-// 针对火狐浏览器打bug
+// 針對火狐瀏覽器解bug
 // @include firefox{.test{padding-bottom:3px;}}
 @mixin firefox {
   @-moz-document url-prefix(){
@@ -280,12 +280,12 @@
 // 只定义了%，所以只能通过@extend来调用
 //-----------------------------------------------------
 
-//为高级浏览器准备的box-sizing盒子模型，ie8+
+//為標準瀏覽器準備的box-sizing盒模型，ie8+
 %box-sizing-border{
   @include box-sizing;
 }
 
-// 普通all transition特效
+// 普通all tr​​ansition特效
 %all-transition{
   @include transition;
 }
@@ -297,7 +297,7 @@
   }
 }
 
-// 垂直渐变，渐变背景是半透明到全透明，这样就可以通过设置背景色来表现渐变
+// 垂直漸層，漸層背景是半透明到全透明，這樣就可以通過設置背景色來表現漸層
 //-------------------------
 // 白色，由半透明到全透明
 %gradient-linear-light {
@@ -332,24 +332,24 @@
 //function
 //-----------------------------------------------------  
 
-// px转em
+// px轉em
 @function pxToEm($px, $base: 16) {
   @return ($px / $base) * 1em;
 }
 
-// 为颜色添加白色，以百分比形式
+// 為顏色添加白色，以百分比形式
 @function tint($color, $percent){
   @return mix(white, $color, $percent);
 }
 
-// 为颜色添加黑色，以百分比形式
+// 為顏色添加黑色，以百分比形式
 @function shade($color, $percent){
   @return mix(black, $color, $percent);
 }
 
 
-// 定义一些常见元素的简单样式(btn,table,form)
-// 这里只是满足简单的使用，更全更好的请参考各自的组件
+// 定義一些常見元素的簡單樣式(btn,table,form)
+// 這裡只是滿足簡單的使用，更全更好的請參考各自的組件
 //-----------------------------------------------------
 
 // btn
@@ -409,8 +409,8 @@
   }
 }
 
-// input, select, textarea的基础样式
-// 边框，padding
+// input, select, textarea的基礎樣式
+// border，padding
 %simple-form-basic{
   border: 1px solid $gray;
   padding: 4px;
@@ -420,7 +420,7 @@
   }
 }
 
-// 输入框
+// 輸入框
 @mixin simple-text($borderColorFocus: #52a8ec){
   @extend %simple-form-basic;
   height: 18px;
@@ -453,7 +453,7 @@
   @extend %simple-form-basic;
 
   // select lte ie7
-  // ie6,7 不支持select的padding
+  // ie6,7 不支援select的padding
   @if $lte7 {
       *margin-top:5px;
       *margin-bottom:5px;
@@ -461,13 +461,13 @@
   }
 }
 
-// radio & checkbox 的重置
+// radio & checkbox 重置
 %reset-radio-checkbox{
   margin:0 5px 0 0;
   padding:0;
   font-size: 13px;
-  //ie6,7得设置宽度和高度才能表现和其他浏览器一样的重置
-  //radio和checkbox的大小为13px
+  //ie6,7得設置寬度和高度才能表現和其他瀏覽器一樣的重置
+  //radio和checkbox的大小為13px
   @if $lte7 {
     *width:13px;
     *height:13px;

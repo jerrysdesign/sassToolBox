@@ -6,9 +6,9 @@
 
 // 開關設置
 //-----------------------------------------------------
-$lte7: true !default; //是否兼容ie6-7
-$filter: false !default; //是否為ie6-8開啟css3濾鏡兼容，常用於漸變背景
-$printStyleSwitch: false !default; //是否開啟打印樣式
+$lte7: true !default; //是否相容ie6-7
+$filter: false !default; //是否為ie6-8開啟css3濾鏡相容，常用於漸層背景
+$printStyleSwitch: false !default; //是否開啟列印樣式
 
 
 // font相關
