@@ -6,7 +6,7 @@
 
 // hinge
 @mixin animate-hinge () {
-  @include keyframes(hinge){
+  @include keyframes(hinge) {
     0% {
       @include rotate(0);
     }
@@ -36,7 +36,7 @@
 
 // rollIn
 @mixin animate-rollIn () {
-  @include keyframes(rollIn){
+  @include keyframes(rollIn) {
     0% {
       opacity: 0;
       @include transform(translateX(-100%) rotate(-120deg));
@@ -54,7 +54,7 @@
 
 // rollOut
 @mixin animate-rollOut () {
-  @include keyframes(rollOut){
+  @include keyframes(rollOut) {
     0% {
       opacity: 1;
       @include transform(translateX(0) rotate(0));

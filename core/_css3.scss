@@ -13,22 +13,22 @@
 $prefixForWebkit:     true !default;
 $prefixForMozilla:    true !default;
 $prefixForMicrosoft:  true !default;
-$prefixForOpera:      false !default; //opera從版本15開始轉向webkit，所以默認為false，不輸出o前綴
+$prefixForOpera:      false !default; //opera從版本15開始轉向webkit，所以預設為false，不輸出o前綴
 $prefixNo:            true !default;
 
-// 用於flex的兼容變量
+// 用於flex的兼容變數
 $flexOld:             true !default; //09版本用於兼容移動端，-webkit前綴
 $flexMid:             true !default; //用於ie10 -ms前綴
 
 
 // prefixer
 // 用於在屬性上加前綴
-// 默認這裡將只輸出webkit前綴和標準（如果要開啟opera的可以將$prefixForOpera設置為true）
+// 預設這裡將只輸出webkit前綴和標準（如果要開啟opera的可以將$prefixForOpera設置為true）
 //-----------------------------------------------------
 @mixin prefixer($property, $value, $prefixes: o webkit) {
   @each $prefix in $prefixes {
     @if $prefix == webkit and $prefixForWebkit == true {
-      -webkit-#{$property}: $value;
+			-webkit-#{$property}: $value;
     }
     @else if $prefix == moz and $prefixForMozilla == true {
       -moz-#{$property}: $value;
@@ -47,7 +47,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 
 // prefixer-value
 // 用於在值上加前綴
-// 默認這裡將輸出webkit前綴，moz前綴和標準
+// 預設這裡將輸出webkit前綴，moz前綴和標準
 @mixin prefixer-value($property, $value, $prefixes: webkit moz) {
   @each $prefix in $prefixes {
     @if $prefix == webkit and $prefixForWebkit == true {
@@ -116,7 +116,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 
 // border-image
 // http://border-image.com/
-@mixin border-image($image){
+@mixin border-image($image) {
   @include prefixer(border-image, $image);
 }
 
@@ -221,15 +221,15 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 // Firefox 10+, Opera 11.6+, Chrome 26+ and IE10 also support the new "to (side)" syntax.
 //-----------------------------------------------------
 // 水平漸層，從左往右
-// @include gradient-horizo​​ntal(#333, #ccc);
-@mixin gradient-horizo​​ntal($gradient...){
+// @include gradient-horizontal(#333, #ccc);
+@mixin gradient-horizontal($gradient...) {
   background-image: -webkit-linear-gradient(left, $gradient); // Safari 5.1+, Chrome 10+
   background-image: -o-linear-gradient(left, $gradient); // Opera 11.10
   background-image: linear-gradient(to right, $gradient); // Standard, IE10
 }
 // 水平漸層，從左往右，平鋪
-// @include gradient-horizo​​ntal-repeating(#333 5%, #ccc 10%);
-@mixin gradient-horizo​​ntal-repeating($gradient...){
+// @include gradient-horizontal-repeating(#333 5%, #ccc 10%);
+@mixin gradient-horizontal-repeating($gradient...) {
   background-image: -webkit-repeating-linear-gradient(left, $gradient); // Safari 5.1+, Chrome 10+
   background-image: -o-repeating-linear-gradient(left, $gradient); // Opera 11.10
   background-image: repeating-linear-gradient(to right, $gradient); // Standard, IE10
@@ -265,7 +265,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 // 徑向漸層，可以寫點簡單的
 // 如：@include gradient-radial(#00F,#FFF);
 // 而@include gradient-radial(farthest-side circle at right,#00F,#FFF);這種的將不會兼容，所以不要調用這個，可以去找工俱生成
-@mixin gradient-radial($gradient...){
+@mixin gradient-radial($gradient...) {
   background-image: -webkit-radial-gradient($gradient); // Safari 5.1+, Chrome 10+
   background-image: -o-radial-gradient($gradient); // Opera 11.10
   background-image: radial-gradient($gradient); // Standard, IE1
@@ -361,10 +361,10 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 }
 
 // matrix
-@mixin matrix($args...){
+@mixin matrix($args...) {
   @include prefixer(transform, matrix($args));
 }
-@mixin matrix3D($args...){
+@mixin matrix3D($args...) {
   @include prefixer(transform, matrix3D($args));
 }
 
@@ -382,7 +382,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer(perspective-origin, $value);
 }
 
-@mixin backface-visibility($visibility:hidden){
+@mixin backface-visibility($visibility:hidden) {
   // visible | hidden
   @include prefixer(backface-visibility, $visibility);
 }
@@ -400,7 +400,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   }
 }
 
-// 默認不提供moz的，如有需要請自行添加
+// 預設不提供moz的，如有需要請自行添加
 // -moz-transition-property: transitionPropertyNames($properties, moz);
 @mixin transition-property($properties...) {
   -webkit-transition-property: transitionPropertyNames($properties, webkit);
@@ -544,7 +544,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 //-----------------------------------------------------
 // flex-old和flex-mid分別應用與old版本和mid版本
 //----------------------------
-@mixin flex-old($property,$value,$propertyPrefix:true){
+@mixin flex-old($property,$value,$propertyPrefix:true) {
   @if $flexOld {
     @if $propertyPrefix {
       -wekit-#{$property} : $value;
@@ -554,7 +554,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   }
 }
 
-@mixin flex-mid($property,$value,$propertyPrefix:true){
+@mixin flex-mid($property,$value,$propertyPrefix:true) {
   @if $flexMid {
     @if $propertyPrefix {
       -ms-#{$property} : $value;
@@ -577,16 +577,16 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer-value(display,$flex);
 }
 
-@mixin flex-direction($direction: column){
+@mixin flex-direction($direction: column) {
   // row | row-reverse | column | column-reverse
   @if $direction == row {
-    @include flex-old(box-orient,horizo​​ntal);
+    @include flex-old(box-orient,horizontal);
   }
   @if $direction == column {
     @include flex-old(box-orient,vertical);
   }
   @if $direction == row-reverse {
-    @include flex-old(box-orient,horizo​​ntal);
+    @include flex-old(box-orient,horizontal);
     @include flex-old(box-direction,reverse);
   }
   @if $direction == column-reverse {
@@ -597,7 +597,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer(flex-direction, $direction, webkit moz);
 }
 
-@mixin flex-wrap($wrap: wrap){
+@mixin flex-wrap($wrap: wrap) {
   // nowrap | wrap | wrap-reverse
   // old版本不支持wrap-reverse
   @if $wrap == wrap {
@@ -611,18 +611,18 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 }
 
 // flex-flow is a shorthand for flex-direction and flex-wrap
-@mixin flex-flow($flow: row wrap){
+@mixin flex-flow($flow: row wrap) {
   // direction || wrap
   @include prefixer(flex-flow, $flow, webkit moz);
 }
 
-@mixin order($num: -1){
+@mixin order($num: -1) {
   @include flex-old(box-ordinal-group,$num);
   @include flex-mid(flex-order,$num);
   @include prefixer(order, $num, webkit moz);
 }
 
-@mixin justify-content($align: space-between){
+@mixin justify-content($align: space-between) {
   // flex-start | flex-end | center | space-between | space-around
   @if $align == flex-start {
     @include flex-old(box-pack,start);
@@ -642,7 +642,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer(justify-content, $align, webkit moz);
 }
 
-@mixin align-items($align: center){
+@mixin align-items($align: center) {
   // flex-start | flex-end | center | baseline | stretch
   @if $align == flex-start {
     @include flex-old(box-align,start);
@@ -657,7 +657,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer(align-items, $align, webkit moz);
 }
 
-@mixin align-content($align: flex-start){
+@mixin align-content($align: flex-start) {
   // stretch | flex-start | flex-end | center | space-between | space-around
   // old不支持
   @if $align == flex-start {
@@ -674,7 +674,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
   @include prefixer(align-content, $align, webkit moz);
 }
 
-@mixin align-self($align: flex-start){
+@mixin align-self($align: flex-start) {
   // auto | flex-start | flex-end | center | baseline | stretch
   // old不支持
   @if $align == flex-start {
@@ -688,7 +688,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 }
 
 // https://developer.mozilla.org/en-US/docs/Web/CSS/flex
-@mixin flex($arg){
+@mixin flex($arg) {
   //initial | auto | none | number
   // 只傳入數字則三大版本都支持
   @if type-of($arg) == number {
@@ -712,88 +712,88 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 // mask-origin (background-origin)
 // mask-box-image (border-image)
 //-----------------------------------------------------
-@mixin mask($mask...){
+@mixin mask($mask...) {
   @include prefixer(mask, $mask, webkit moz);
 }
 
-@mixin mask-image($image...){
+@mixin mask-image($image...) {
   @include prefixer(mask-image, $image, webkit moz);
 }
 
-@mixin mask-position($position...){
+@mixin mask-position($position...) {
   @include prefixer(mask-position, $position, webkit moz);
 }
 
-@mixin mask-repeat($repeat...){
+@mixin mask-repeat($repeat...) {
   @include prefixer(mask-repeat, $repeat, webkit moz);
 }
 
-@mixin mask-origin($origin...){
+@mixin mask-origin($origin...) {
   @include prefixer(mask-origin, $origin, webkit moz);
 }
 
-@mixin mask-clip($clip...){
+@mixin mask-clip($clip...) {
   @include prefixer(mask-clip, $clip, webkit moz);
 }
 
-@mixin mask-type($type: luminance){
+@mixin mask-type($type: luminance) {
   @include prefixer(mask-type, $type, webkit moz);
 }
 
-@mixin mask-box-image($box){
+@mixin mask-box-image($box) {
   @include prefixer(mask-box-image, $box, webkit moz);
 }
 
 
 // filter
 //-----------------------------------------------------
-@mixin filter($function...){
+@mixin filter($function...) {
   // <filter-function> [<filter-function>]* | none
   @include prefixer(filter, $function, webkit moz);
 }
 
-@mixin filter-blur($px){
+@mixin filter-blur($px) {
   @include prefixer(filter, blur($px), webkit moz);
 }
 
-@mixin filter-grayscale($percent: 100%){
+@mixin filter-grayscale($percent: 100%) {
   @include prefixer(filter, grayscale($percent), webkit moz);
 }
 
-@mixin filter-drop-shadow($shadow...){
+@mixin filter-drop-shadow($shadow...) {
   @include prefixer(filter, drop-shadow($shadow), webkit moz);
 }
 
 // @include url("filepath");
-@mixin filter-url($url){
+@mixin filter-url($url) {
   @include prefixer(filter, url(#{$url}), webkit moz);
 }
 
-@mixin filter-brightness($value: 0.5){
+@mixin filter-brightness($value: 0.5) {
   @include prefixer(filter, brightness($value), webkit moz);
 }
 
-@mixin filter-contrast($value){
+@mixin filter-contrast($value) {
   @include prefixer(filter, contrast($value), webkit moz);
 }
 
-@mixin filter-hue-rotate($value: 90deg){
+@mixin filter-hue-rotate($value: 90deg) {
   @include prefixer(filter, hue-​​rotate($value), webkit moz);
 }
 
-@mixin filter-invert($value: 100%){
+@mixin filter-invert($value: 100%) {
   @include prefixer(filter, invert($value), webkit moz);
 }
 
-@mixin filter-opacity($value){
+@mixin filter-opacity($value) {
   @include prefixer(filter, opacity($value), webkit moz);
 }
 
-@mixin filter-saturate($value){
+@mixin filter-saturate($value) {
   @include prefixer(filter, saturate($value), webkit moz);
 }
 
-@mixin filter-sepia($value: 100%){
+@mixin filter-sepia($value: 100%) {
   @include prefixer(filter, sepia($value), webkit moz);
 }
 
@@ -853,23 +853,23 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 //-----------------------------------------------------
 
 // text
-@mixin text-fill-color($color){
+@mixin text-fill-color($color) {
   @include prefixer(text-fill-color, $color, webkit);
 }
-@mixin text-stroke-color($color){
+@mixin text-stroke-color($color) {
   @include prefixer(text-stroke-color, $color, webkit);
 }
-@mixin text-stroke-width($width){
+@mixin text-stroke-width($width) {
   @include prefixer(text-stroke-color, $width, webkit);
 }
 
-@mixin margin-collapse($value: collapse){
+@mixin margin-collapse($value: collapse) {
   // collapse | separate
   @include prefixer(margin-collapse, $value, webkit);
 }
 
 // https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariCSSRef/Articles/StandardCSSProperties.html#//apple_ref/doc/uid/TP30001266-SW16
-@mixin box-reflect($reflect: below 1px){
+@mixin box-reflect($reflect: below 1px) {
   // direction offset mask-box-image;
   @include prefixer(box-reflect, $reflect, webkit);
 }

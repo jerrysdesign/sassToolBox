@@ -6,7 +6,7 @@
 
 // slideInDown
 @mixin animate-slideInDown () {
-  @include keyframes(slideInDown){
+  @include keyframes(slideInDown) {
     0% {
       opacity: 0;
       @include translateY(-2000px);
@@ -23,7 +23,7 @@
 
 // slideInLeft
 @mixin animate-slideInLeft () {
-  @include keyframes(slideInLeft){
+  @include keyframes(slideInLeft) {
     0% {
       opacity: 0;
       @include translateX(-2000px);
@@ -40,7 +40,7 @@
 
 // slideInRight
 @mixin animate-slideInRight () {
-  @include keyframes(slideInRight){
+  @include keyframes(slideInRight) {
     0% {
       opacity: 0;
       @include translateX(2000px);
@@ -57,7 +57,7 @@
 
 // slideOutLeft
 @mixin animate-slideOutLeft () {
-  @include keyframes(slideOutLeft){
+  @include keyframes(slideOutLeft) {
     0% {
       @include translateX(0);
     }
@@ -74,7 +74,7 @@
 
 // slideOutRight
 @mixin animate-slideOutRight () {
-  @include keyframes(slideOutRight){
+  @include keyframes(slideOutRight) {
     0% {
       @include translateX(0);
     }
@@ -91,7 +91,7 @@
 
 // slideOutUp
 @mixin animate-slideOutUp () {
-  @include keyframes(slideOutUp){
+  @include keyframes(slideOutUp) {
     0% {
       @include translateY(0);
     }

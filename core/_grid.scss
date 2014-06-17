@@ -24,7 +24,7 @@ $gridSystemWidth:                 $gridColumns * ($gridColumnWidth + $gridGutter
 // percent layout setting 
 // 百分比佈局的變數設置 
 //-----------------------------------------------------
-$gridPercentSwitch:               false !default; // 默認為固定寬度佈局，設置為true為百分比 
+$gridPercentSwitch:               false !default; // 預設為固定寬度佈局，設置為true為百分比 
 $gridRealWidth:                   $gridSystemWidth !default; 
 $gridGutterPercent:               percentage($gridGutter / $gridSystemWidth) !default; 
 
@@ -56,7 +56,7 @@ $gridSpanSwitch:                  false !default;
 // getWidth(3, false) would return 240px 
 // getWidth(3) or getWidth(3, true) would return 220px; 
 // and plain getWidth() or getWidth would return 940px; 
-@function getWidth($i:$gridColumns, $onlyInnerWidth:true, $subtract:0){ 
+@function getWidth($i:$gridColumns, $onlyInnerWidth:true, $subtract:0) { 
   // First set a default return value 
   $return: (($gridColumnWidth + $gridGutter) * $i / $gridSystemWidth) * $gridRealWidth - $subtract !default; 
 
@@ -100,7 +100,7 @@ $gridSpanSwitch:                  false !default;
 // We're defining the default values​​ as follows: 
 // Default Column Count: Max Column Count 
 // Padding (explained below): 0 
-@mixin column($i: $gridColumns, $subtract:0){ 
+@mixin column($i: $gridColumns, $subtract:0) { 
   @extend %float; 
   @extend %margin-gutter; 
 
@@ -117,7 +117,7 @@ $gridSpanSwitch:                  false !default;
 // But just in case someone finds an alternative use of this, 
 // we shouldhave the flexibility 
 // So wrapper( column count, center ?, subtract) 
-@mixin wrapper($i: $gridColumns, $center:true, $subtract:0){ 
+@mixin wrapper($i: $gridColumns, $center:true, $subtract:0) { 
   @extend %clearfix; 
    
   // Because this is a wrapper, we don't need the outer gutter - we need the full width 
@@ -146,10 +146,10 @@ $gridSpanSwitch:                  false !default;
 
 // prepend & append 
 //-----------------------------------------------------
-@mixin prepend($i:1, $subtract:0){ 
+@mixin prepend($i:1, $subtract:0) { 
   margin-left: getWidth($i,false,$subtract); 
 } 
-@mixin append($i:1, $subtract:0){ 
+@mixin append($i:1, $subtract:0) { 
   margin-right: getWidth($i,false,$subtract); 
 } 
 

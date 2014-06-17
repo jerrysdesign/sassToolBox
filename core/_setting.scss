@@ -67,14 +67,14 @@ $textColor: $grayDarker !default;
 
 // placeholder
 //-----------------------------------------------------
-// 變量分別為：是否輸出表單的佔位符placeholder樣式，文本色
+// 變數分別為：是否輸出表單的佔位符placeholder樣式，文本色
 $placeholder: true $gray !default;
 
 
 // 交互配色
 // 警告，錯誤，成功，提示
 //-----------------------------------------------------
-// 每個變量都有三個顏色值，分別為：文本色，背景色，邊框色
+// 每個變數都有三個顏色值，分別為：文本色，背景色，邊框色
 $warningColor: #514721 #FFF6BF #FFD324 !default;
 $errorColor: #8A1F11 #FBE3E4 #FBC2C4 !default;
 $successColor: #264409 #E6EFC2 #C6D880 !default;

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 //-----------------------------------------------------
 // reset scss
-// 包括normalize，歸零重置，列印樣式三大部分
+// 包括normalize，重置歸零，列印樣式三大部分
 //-----------------------------------------------------
 
 // normalize 3.1
@@ -556,7 +556,7 @@ h5,h6 {
 
 
 // 打印樣式
-// 通過變量$printStyleSwitch來設置是否輸出
+// 通過變數$printStyleSwitch來設置是否輸出
 // 來自於html5 boilerplate:http://html5boilerplate.com/
 //-----------------------------------------------------
 @if $printStyleSwitch {

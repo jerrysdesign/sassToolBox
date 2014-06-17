@@ -6,7 +6,7 @@
 
 // fadeIn
 @mixin animate-fadeIn () {
-  @include keyframes(fadeIn){
+  @include keyframes(fadeIn) {
     0% {
       opacity: 0;
     }
@@ -23,7 +23,7 @@
 
 // fadeInDown
 @mixin animate-fadeInDown () {
-  @include keyframes(fadeInDown){
+  @include keyframes(fadeInDown) {
     0% {
       opacity: 0;
       @include translateY(-20px);
@@ -41,7 +41,7 @@
 
 // fadeInDownBig
 @mixin animate-fadeInDownBig () {
-  @include keyframes(fadeInDownBig){
+  @include keyframes(fadeInDownBig) {
     0% {
       opacity: 0;
       @include translateY(-2000px);
@@ -60,7 +60,7 @@
 
 // fadeInLeft
 @mixin animate-fadeInLeft () {
-  @include keyframes(fadeInLeft){
+  @include keyframes(fadeInLeft) {
     0% {
       opacity: 0;
       @include translateX(-20px);
@@ -78,7 +78,7 @@
 
 // fadeInLeftBig
 @mixin animate-fadeInLeftBig () {
-  @include keyframes(fadeInLeftBig){
+  @include keyframes(fadeInLeftBig) {
     0% {
       opacity: 0;
       @include translateX(-2000px);
@@ -96,7 +96,7 @@
 
 // fadeInRight
 @mixin animate-fadeInRight () {
-  @include keyframes(fadeInRight){
+  @include keyframes(fadeInRight) {
     0% {
       opacity: 0;
       @include translateX(20px);
@@ -114,7 +114,7 @@
 
 // fadeInRightBig
 @mixin animate-fadeInRightBig () {
-  @include keyframes(fadeInRightBig){
+  @include keyframes(fadeInRightBig) {
     0% {
       opacity: 0;
       @include translateX(2000px);
@@ -132,7 +132,7 @@
 
 // fadeInUp
 @mixin animate-fadeInUp () {
-  @include keyframes(fadeInUp){
+  @include keyframes(fadeInUp) {
     0% {
       opacity: 0;
       @include translateY(20px);
@@ -150,7 +150,7 @@
 
 // fadeInUpBig
 @mixin animate-fadeInUpBig () {
-  @include keyframes(fadeInUpBig){
+  @include keyframes(fadeInUpBig) {
     0% {
       opacity: 0;
       @include translateY(2000px);
@@ -168,7 +168,7 @@
 
 // fadeOut
 @mixin animate-fadeOut () {
-  @include keyframes(fadeOut){
+  @include keyframes(fadeOut) {
     0% {
       opacity: 1;
     }
@@ -184,7 +184,7 @@
 
 // fadeOutDown
 @mixin animate-fadeOutDown () {
-  @include keyframes(fadeOutDown){
+  @include keyframes(fadeOutDown) {
     0% {
       opacity: 1;
       @include translateY(0);
@@ -202,7 +202,7 @@
 
 // fadeOutDownBig
 @mixin animate-fadeOutDownBig () {
-  @include keyframes(fadeOutDownBig){
+  @include keyframes(fadeOutDownBig) {
     0% {
       opacity: 1;
       @include translateY(0);
@@ -220,7 +220,7 @@
 
 // fadeOutLeft
 @mixin animate-fadeOutLeft () {
-  @include keyframes(fadeOutLeft){
+  @include keyframes(fadeOutLeft) {
     0% {
       opacity: 1;
       @include translateX(0px);
@@ -238,7 +238,7 @@
 
 // fadeOutLeftBig
 @mixin animate-fadeOutLeftBig () {
-  @include keyframes(fadeOutLeftBig){
+  @include keyframes(fadeOutLeftBig) {
     0% {
       opacity: 1;
       @include translateX(0px);
@@ -256,7 +256,7 @@
 
 // fadeOutRight
 @mixin animate-fadeOutRight () {
-  @include keyframes(fadeOutRight){
+  @include keyframes(fadeOutRight) {
     0% {
       opacity: 1;
       @include translateX(0);
@@ -274,7 +274,7 @@
 
 // fadeOutRightBig
 @mixin animate-fadeOutRightBig () {
-  @include keyframes(fadeOutRightBig){
+  @include keyframes(fadeOutRightBig) {
     0% {
       opacity: 1;
       @include translateX(0);
@@ -292,7 +292,7 @@
 
 // fadeOutUp
 @mixin animate-fadeOutUp () {
-  @include keyframes(fadeOutUp){
+  @include keyframes(fadeOutUp) {
     0% {
       opacity: 1;
       @include translateY(0);
@@ -310,7 +310,7 @@
 
 // fadeOutUpBig
 @mixin animate-fadeOutUpBig () {
-  @include keyframes(fadeOutUpBig){
+  @include keyframes(fadeOutUpBig) {
     0% {
       opacity: 1;
       @include translateY(0);

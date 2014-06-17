@@ -2,9 +2,9 @@
 //-----------------------------------------------------  
 // mixin scss
 // 包括常用的mixin，%及@function
-// mixin，通过@include调用，样式通过拷贝的方式使用，尤其适用于传递参数
-// %，通过@extend調用，樣式通過組合申明方的式使用，是用於不傳遞參數的原始碼片段
-// @function，返回一个值，用于调用
+// mixin，通過@include調用，樣式通過拷貝的方式使用，尤其適用於傳遞參數
+// %，通過@extend調用，樣式通過組合宣告方的式使用，是用於不傳遞參數的原始碼片段
+// @function，返回一個值，用於調用
 //-----------------------------------------------------
 
 // mixin & %
@@ -107,7 +107,7 @@
 }
 
 // ul has list style
-@mixin ul-has-style($style:disc){
+@mixin ul-has-style($style:disc) {
   margin-left:25px;
   list-style:disc;
 }
@@ -120,7 +120,7 @@
 // 原生7,8不支援color的transparent，所以采用1;
 // ie6用1會有一條细线，所以采用3
 // 如果要相容ie6，使用的时候務必確定元素設置高度。
-@mixin ir($height:99){
+@mixin ir($height:99) {
   font: 0/0 a; //1
   text-shadow: none;
   border:0 none;
@@ -191,7 +191,7 @@
 }
 
 //黑色背景色半透明
-@mixin bgcolor-alpha($bgcolor: rgba(0,0,0,.5)){
+@mixin bgcolor-alpha($bgcolor: rgba(0,0,0,.5)) {
   color:#fff;
   @if $filter{
     filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#{ie-hex-str($bgcolor)}', endColorstr='#{ie-hex-str($bgcolor)}');
@@ -206,7 +206,7 @@
 
 // disabled
 // 禁用式，加!important
-@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab){
+@mixin disabled($bgColor:#e6e6e6,$textColor:#ababab) {
   background-color: $bgColor !important;
   color: $textColor !important;
   cursor: not-allowed !important;
@@ -216,7 +216,7 @@
 }
 
 // 水平間隔線，適用於行列表
-@mixin horizontal-line($border:1px dashed $gray, $padding:10px){
+@mixin horizontal-line($border:1px dashed $gray, $padding:10px) {
   border-bottom:$border;
   padding-top:$padding;
   padding-bottom:$padding;  
@@ -244,7 +244,7 @@
 }
 
 //最小高度
-@mixin min-height($height){
+@mixin min-height($height) {
   min-height: $height;
   height: auto !important;
   @if $lte7{
@@ -270,7 +270,7 @@
 // 針對火狐瀏覽器解bug
 // @include firefox{.test{padding-bottom:3px;}}
 @mixin firefox {
-  @-moz-document url-prefix(){
+  @-moz-document url-prefix() {
     @content;
   }
 }
@@ -338,12 +338,12 @@
 }
 
 // 為顏色添加白色，以百分比形式
-@function tint($color, $percent){
+@function tint($color, $percent) {
   @return mix(white, $color, $percent);
 }
 
 // 為顏色添加黑色，以百分比形式
-@function shade($color, $percent){
+@function shade($color, $percent) {
   @return mix(black, $color, $percent);
 }
 
@@ -356,7 +356,7 @@
 // @include simple-btn;
 // @include simple-btn(true);
 // @include simple-btn($bgColor:$green);
-@mixin simple-btn($formbtn:false, $bgColor: $primary, $textColor:$white){
+@mixin simple-btn($formbtn:false, $bgColor: $primary, $textColor:$white) {
   @include inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -383,7 +383,7 @@
 // @include simple-table;
 // @include simple-table(false);
 // @include simple-table(true, $thBgColor: $orange);
-@mixin simple-table($th:true, $borderColor: $gray, $thBgColor: $primary, $thTextColor:$white){
+@mixin simple-table($th:true, $borderColor: $gray, $thBgColor: $primary, $thTextColor:$white) {
   width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
@@ -421,7 +421,7 @@
 }
 
 // 輸入框
-@mixin simple-text($borderColorFocus: #52a8ec){
+@mixin simple-text($borderColorFocus: #52a8ec) {
   @extend %simple-form-basic;
   height: 18px;
   
@@ -438,7 +438,7 @@
 }
 
 // textarea
-@mixin simple-textarea($borderColorFocus:#52a8ec, $width:500px, $height:80px){
+@mixin simple-textarea($borderColorFocus:#52a8ec, $width:500px, $height:80px) {
   @include simple-text($borderColorFocus);
   height: $height;
   width: $width;

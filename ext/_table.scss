@@ -5,18 +5,18 @@
 
 // thanks:https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_tables.scss
 
-// 变量
+// 變數
 //---------------------------------
-$zebraLte8:                      false !default; //斑马线效果是否支持ie8，如果支持请在tr里面添加class odd
-$tableBgColor:                   transparent !default; // overall background-color
-$tableBgColorEven:               #f9f9f9 !default; // for striping zebra
-$tableBgColorHover:              #e9f5ff !default; // for hover
-$tableBorderColor:               $gray !default; // table and cell border
-$tableThBgColor:                 #f4f4f4 !default;//默认th背景色
-$tableColThWidth:                80px !default;//默认左边第一栏为th表格的th宽度
-$tableCellPadding:               8px !default;//单元格的padding
-$tableRadius:                    $baseRadius !default;//圆角大小
-$tableResetSwitch:               true !default;//是否已经有了table的重置border-collapse: collapse;border-spacing: 0;
+$zebraLte8: false !default; //斑馬線效果是否支援ie8，如果支援請在tr裡面添加class odd
+$tableBgColor: transparent !default; // overall background-color
+$tableBgColorEven: #f9f9f9 !default; // for striping zebra
+$tableBgColorHover: #e9f5ff !default; // for hover
+$tableBorderColor: $gray !default; // table and cell border
+$tableThBgColor: #f4f4f4 !default;//th背景色
+$tableColThWidth: 80px !default;//左邊第一欄為th表格的th寬度
+$tableCellPadding: 8px !default;//單元格的padding
+$tableRadius: $baseRadius !default;//圓角大小
+$tableResetSwitch: true !default;//是否已經有了table的重置border-collapse: collapse;border-spacing: 0;
 
 //各个table开关设置
 $tableBorderSwitch:              true !default;
@@ -32,7 +32,7 @@ $tableStatusSwitch:              false !default;
 
 //table mixin
 //---------------------------------
-@mixin table-radius($radius: $tableRadius){
+@mixin table-radius($radius: $tableRadius) {
   border-collapse: separate; // Done so we can round those corners!
   @if $lte7 {
     *border-collapse: collapse; // IE7 can't round corners anyway
@@ -90,14 +90,14 @@ $tableStatusSwitch:              false !default;
   }
 }
 
-@mixin table-border($borderColor:$tableBorderColor){
+@mixin table-border($borderColor:$tableBorderColor) {
   th,
   td {
     border: 1px solid $borderColor;
   }
 }
 
-@mixin zebra-stripe($even: $tableBgColorEven){
+@mixin zebra-stripe($even: $tableBgColorEven) {
   tbody {
     > tr:nth-child(even) > td{
       background-color: $even;
@@ -110,7 +110,7 @@ $tableStatusSwitch:              false !default;
   }
 }
 
-@mixin tr-hover($hover: $tableBgColorHover){
+@mixin tr-hover($hover: $tableBgColorHover) {
   tbody {
     tr:hover > td{
       background-color: $hover;
@@ -118,7 +118,7 @@ $tableStatusSwitch:              false !default;
   }
 }
 
-@mixin table-thead($thBgColor:$primary,$thTextColor:$white){
+@mixin table-thead($thBgColor:$primary,$thTextColor:$white) {
   th{
     background-color: $thBgColor;
     color:$thTextColor;

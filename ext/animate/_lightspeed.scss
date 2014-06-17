@@ -6,7 +6,7 @@
 
 // lightSpeedIn
 @mixin animate-lightSpeedIn () {
-  @include keyframes(lightSpeedIn){
+  @include keyframes(lightSpeedIn) {
     0% {
       opacity: 0;
       @include transform(translateX(100%) skewX(-30deg));
@@ -32,7 +32,7 @@
 
 // lightSpeedOut
 @mixin animate-lightSpeedOut () {
-  @include keyframes(lightSpeedOut){
+  @include keyframes(lightSpeedOut) {
     0% {
       opacity: 1;
       @include transform(translateX(0%) skewX(0deg));

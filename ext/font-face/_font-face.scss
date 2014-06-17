@@ -13,7 +13,7 @@
 //-----------------------------------------------------
 
 
-// 導入變量
+// 導入變數
 @import "variables";
 
 
@@ -25,7 +25,7 @@
 //-----------------------------------------------------
 
 // 基礎樣式
-%font-basic{
+%font-basic {
   display: inline-block;
   font-family: $fontFamily;
   font-style: normal;
@@ -36,9 +36,9 @@
 }
 
 
-// 傳入單個名字，以在所有的$ClassAll變量中查詢到其對應的內容
+// 傳入單個名字，以在所有的$ClassAll變數中查詢到其對應的內容
 // 如glass，查詢到的就是"\f000"，music對應的就是"\f001"
-@function fontSearch($needle, $sea: $fontClassAll){
+@function fontSearch($needle, $sea: $fontClassAll) {
   @each $item in $sea {
     $index: index($item, $needle);
 
@@ -53,7 +53,7 @@
 
 
 // icon mixin
-@mixin font-icon($class){
+@mixin font-icon($class) {
   .#{$fontClassPrefix}-#{$class}{
     @extend %font-basic;
 
@@ -75,8 +75,8 @@
   }
 } @else {
   // 部分輸出的class
-  @if length($fontClassoutput) >= 2{
-    @each $class in $fontClassoutput{
+  @if length($fontClassoutput) >= 2 {
+    @each $class in $fontClassoutput {
       @include font-icon($class);
     }
   }

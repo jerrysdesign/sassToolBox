@@ -6,7 +6,7 @@
 
 //bounce
 @mixin animate-bounce () {
-  @include keyframes(bounce){
+  @include keyframes(bounce) {
     0%, 20%, 50%, 80%, 100% {
       @include translateY(0);
     }
@@ -27,7 +27,7 @@
 
 // flash
 @mixin animate-flash () {
-  @include keyframes(flash){
+  @include keyframes(flash) {
     0%, 50%, 100% {
       opacity: 1;
     }
@@ -44,7 +44,7 @@
 
 // pulse
 @mixin animate-pulse () {
-  @include keyframes(pulse){
+  @include keyframes(pulse) {
     0% {
       @include scale(1);
     }
@@ -63,7 +63,7 @@
 
 // shake
 @mixin animate-shake () {
-  @include keyframes(shake){
+  @include keyframes(shake) {
     0%,100%{
       @include translateX(0);
     }
@@ -82,7 +82,7 @@
 
 // swing
 @mixin animate-swing () {
-  @include keyframes(swing){
+  @include keyframes(swing) {
     20% {
       @include rotate(15deg);
     }
@@ -108,7 +108,7 @@
 
 // tada
 @mixin animate-tada () {
-  @include keyframes(tada){
+  @include keyframes(tada) {
     0% {
       @include scale(1);
     }
@@ -133,7 +133,7 @@
 
 // wobble
 @mixin animate-wobble () {
-  @include keyframes(wobble){
+  @include keyframes(wobble) {
     0% {
       @include translateX(0%);
     }

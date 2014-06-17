@@ -58,7 +58,7 @@ hr {
 // 詳細頁文章內容樣式，通過變數$articleStyleSwitch來控制輸出
 // 詳細頁內容的預設的class為.article，可通過變數$articleClass來設置
 //-----------------------------------------------------
-@if nth($article,1){
+@if nth($article,1) {
   .#{nth($article,2)}{
     line-height: 1.6;
     h1, h2, h3, h4, h5, h6 {

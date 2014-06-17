@@ -6,7 +6,7 @@
 //------------------------------------------------ -----
 
 
-//變量
+//變數
 //---------------------------------
 $formItemMargin:        10px !default; //上下元素的間距
 $formLabelWidth:        100px !default; //當label和元素同行時，label的寬度
@@ -14,14 +14,14 @@ $formTextWidth:         200px !default; //輸入框的寬度
 $formTextarea:          500px 80px !default; //文本域寬度和高度
 $formEleHeight:         28px !default; //輸入框的高度，label的高度，選擇框的高度...
 $formInlineMargin:      10px !default; //相鄰同行元素的間距
-$formUploadBgColor:     $primary !default; //upload按鈕默認背景顏色
-$formRadius:            0 !default; //圓角大小，默認0將不會產生圓角
+$formUploadBgColor:     $primary !default; //upload按鈕背景顏色
+$formRadius:            0 !default; //圓角大小，預設0將不會產生圓角
 
 $formBasicResetSwitch:  true !default; //是否開啟表單元素基本重置，如果你已經有了重置或normalize，就不用開啟了。
 $formMsgSwitch:         false !default; //是否開啟報錯等信息，如設為true則需導入message.scss
 $formConditionSwitch:   false !default; //是否開啟條件選項
 
-$formHorizo​​ntalSwitch:  false !default; //是否啟用水平表單樣式
+$formHorizonyalSwitch:  false !default; //是否啟用水平表單樣式
 $formInlineSwitch:      false !default; //是否啟用單行表單樣式
 $formSimpleSwitch:      false !default; //是否啟用簡潔表單樣式
 
@@ -58,9 +58,9 @@ $formSimpleSwitch:      false !default; //是否啟用簡潔表單樣式
     height:13px;
   }
 }
-// 默認的樣式mixin定義
+// 的樣式mixin定義
 // 定義了border，padding及圓角
-@mixin ele-border($borderColor:$gray, $radius:$baseRadius){
+@mixin ele-border($borderColor:$gray, $radius:$baseRadius) {
   border: 1px solid $borderColor;
   padding:4px;
   @if not(unitless($formRadius)) {
@@ -68,7 +68,7 @@ $formSimpleSwitch:      false !default; //是否啟用簡潔表單樣式
   }
 }
 // 邊框及陰影的動畫效果
-@mixin ele-border-transition(){
+@mixin ele-border-transition() {
   @include ele-border;
   @include transition(border linear 0.2s, box-shadow linear 0.2s);
   @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1));
@@ -284,7 +284,7 @@ p.form-des{
 }
 
 
-// 默認表單
+// 表單
 // label獨立一行
 //---------------------------------
 .form{
@@ -332,11 +332,11 @@ p.form-des{
 }
 
 
-// form-horizo​​ntal
+// form-horizontal
 // label與input元素同行表單
 //---------------------------------
-@if $formHorizo​​ntalSwitch {
-  .form-horizo​​ntal{
+@if $formHorizontalSwitch {
+  .form-horizontal{
     .form-label{
       @include float;
       text-align: right;

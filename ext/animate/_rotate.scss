@@ -6,7 +6,7 @@
 
 // rotateIn
 @mixin animate-rotateIn () {
-  @include keyframes(rotateIn){
+  @include keyframes(rotateIn) {
     0% {
       opacity: 0;
       @include rotate(-200deg);
@@ -24,7 +24,7 @@
 
 // rotateInDownLeft
 @mixin animate-rotateInDownLeft () {
-  @include keyframes(rotateInDownLeft){
+  @include keyframes(rotateInDownLeft) {
     0% {
       opacity: 0;
       @include rotate(-90deg);
@@ -43,7 +43,7 @@
 
 // rotateInDownRight
 @mixin animate-rotateInDownRight () {
-  @include keyframes(rotateInDownRight){
+  @include keyframes(rotateInDownRight) {
     0% {
       opacity: 0;
       @include rotate(90deg);
@@ -62,7 +62,7 @@
 
 // rotateInUpLeft
 @mixin animate-rotateInUpLeft () {
-  @include keyframes(rotateInUpLeft){
+  @include keyframes(rotateInUpLeft) {
     0% {
       opacity: 0;
       @include rotate(90deg);
@@ -81,7 +81,7 @@
 
 // rotateInUpRight
 @mixin animate-rotateInUpRight () {
-  @include keyframes(rotateInUpRight){
+  @include keyframes(rotateInUpRight) {
     0% {
       opacity: 0;
       @include rotate(-90deg);
@@ -100,7 +100,7 @@
 
 // rotateOut
 @mixin animate-rotateOut () {
-  @include keyframes(rotateOut){
+  @include keyframes(rotateOut) {
     0% {
       opacity: 1;
       @include rotate(0);
@@ -118,7 +118,7 @@
 
 // rotateOutDownLeft
 @mixin animate-rotateOutDownLeft () {
-  @include keyframes(rotateOutDownLeft){
+  @include keyframes(rotateOutDownLeft) {
     0% {
       opacity: 1;
       @include rotate(0);
@@ -137,7 +137,7 @@
 
 // rotateOutDownRight
 @mixin animate-rotateOutDownRight () {
-  @include keyframes(rotateOutDownRight){
+  @include keyframes(rotateOutDownRight) {
     0% {
       opacity: 1;
       @include rotate(0);
@@ -156,7 +156,7 @@
 
 // rotateOutUpLeft
 @mixin animate-rotateOutUpLeft () {
-  @include keyframes(rotateOutUpLeft){
+  @include keyframes(rotateOutUpLeft) {
     0% {
       opacity: 1;
       @include rotate(0);
@@ -175,7 +175,7 @@
 
 // rotateOutUpRight
 @mixin animate-rotateOutUpRight () {
-  @include keyframes(rotateOutUpRight){
+  @include keyframes(rotateOutUpRight) {
     0% {
       opacity: 1;
       @include rotate(0);

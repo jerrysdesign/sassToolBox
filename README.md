@@ -1,11 +1,10 @@
 #sassToolBox
 
-sassToolBox參考了[compass](http://compass-style.org/)和[bourbon](http://bourbon.io/)等眾多優秀的sass Library，根據項目實踐，歸納總結而成，並持續為了更好而不斷完善中。
+sassToolBox參考了[compass](http://compass-style.org/)和[bourbon](http://bourbon.io/) sass Library，根據項目實務，歸納總結而成，並持續更新中...
 
-sassToolBox提供了一些基礎和常用的東西，基於它你可以擴展出很多組件等，如果你對這個有興趣，可以參考下基於sassToolBox的[tobe](http://xxx.xx)建構中。
+sassToolBox提供了一些基礎和常用的東西，基於它你可以擴展出很多組件等，如果你對這個有興趣，可以參考下基於sassToolBox的[Jerry](http://xxx.xx)建構中。
 
 ##如何使用？
-
 
 sassToolBox分核心文件和擴展文件兩種。其中核心文件提供一些基礎的樣式和`@mixin`，`%`等方便調用；而擴展文件則提供一些模塊的樣式，如`form`，`table`等。
 
@@ -32,7 +31,7 @@ sassToolBox分核心文件和擴展文件兩種。其中核心文件提供一些
 
 * sassToolBox涵蓋範圍廣。核心文件有setting，css3，media-queries，mixin，grid，reset；擴展文件有animate，font-face，btn，message，form，table，helps，typography；除此之外還有兩個集合文件function和base。
 * sassToolBox對瀏覽器相容性採用了開關控制機制。如對於是否支援ie6/7可以通過設置為true或false以生成對應的原始碼。
-* sassToolBox嚴格控製樣式多餘累贅。使用開關變量做到需要什麼樣式就加載什麼樣式，按需開啟，避免樣式多餘累贅。
+* sassToolBox嚴格控製樣式多餘累贅。使用開關變數做到需要什麼樣式就加載什麼樣式，按需開啟，避免樣式多餘累贅。
 * sassToolBox設計了兩種調用方式，一種是只調用功能，不產生任何多餘的css原始碼；另一種是包含了些重置樣式。為團隊的合作開發提供了良好的解決方案。
 * sassToolBox借鑒優秀的作品，根據經驗創造新的方法，緊跟前沿，每一個文件都是經過深思熟慮，幾易其稿，在實用和卓越上狠下功夫。
 
@@ -45,7 +44,7 @@ sassToolBox包括兩個集合文件（base，function）和兩個文件夾（cor
 ###core文件
 
 ####setting
-負責基礎變量的文件，如常用的顏色，字體等變量。
+負責基礎變數的文件，如常用的顏色，字體等變數。
 
 ####css3
 負責css3屬性前綴的文件。參考了[bourbon](http://bourbon.io/)，然後進行一系列的擴展及優化，以使解析出來的原始碼更加合理。
@@ -80,7 +79,7 @@ sassToolBox包括兩個集合文件（base，function）和兩個文件夾（cor
 提供表單元素樣式及幾種常見的表單組合樣式，可通過變數控制輸出
 
 ####table
-提供幾種常用的表格樣式，可通過變量來控制輸出
+提供幾種常用的表格樣式，可通過變數來控制輸出
 
 ####helper
 常用的幾個class樣式，可以根據自己的喜好定義。

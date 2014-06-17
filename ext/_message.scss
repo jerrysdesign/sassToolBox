@@ -4,7 +4,7 @@
 // 交互提示信息：包括警告，錯誤，成功，提示四種狀態
 //-----------------------------------------------------
 
-// 變量
+// 變數
 //-----------------------------------------------------
 $msgIconSwitch:     true !default;// 是否啟用icon背景，背景圖片使用base64，ie8+支持
 $msgRadius:         0 !default; // 樣式圓角大小，設置為0將不產生圓角。
@@ -34,7 +34,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 }
 
 // 配色方案，包括文本色，背景色，邊框顏色
-@mixin message-skin($textColor, $bgColor, $borderColor ){
+@mixin message-skin($textColor, $bgColor, $borderColor ) {
   background-color:$bgColor;
   border:2px solid $borderColor;
   color: $textColor;
@@ -47,7 +47,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 
 // 樣式
 //-----------------------------------------------------
-@if nth($msgClassSwitch, 1){
+@if nth($msgClassSwitch, 1) {
   .error{
     @extend %message-basic;
     @include message-skin(nth($errorColor,1), n​​th($errorColor,2), nth($errorColor,3));
@@ -57,7 +57,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
   }
 }
 
-@if nth($msgClassSwitch, 2){
+@if nth($msgClassSwitch, 2) {
   .success{
     @extend %message-basic;
     @include message-skin(nth($successColor,1), n​​th($successColor,2), nth($successColor,3));
@@ -67,7 +67,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
   }
 }
 
-@if nth($msgClassSwitch, 3){
+@if nth($msgClassSwitch, 3) {
   .warning{
     @extend %message-basic;
     @include message-skin(nth($warningColor,1), n​​th($warningColor,2), nth($warningColor,3));
@@ -77,7 +77,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
   }
 }
 
-@if nth($msgClassSwitch, 4){
+@if nth($msgClassSwitch, 4) {
   .info{
     @extend %message-basic;
     @include message-skin(nth($infoColor,1), n​​th($infoColor,2), nth($infoColor,3));
