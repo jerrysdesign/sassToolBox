@@ -1,4 +1,4 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
 //-----------------------------------------------------
 // grid scss 
 // 支持固定寬度和百分比寬度，可以控制是否輸出span的class 
@@ -15,85 +15,85 @@
 // 這裡設計的是1000px的佈局，每個柵格為65px，共12個，計算公式：(65+20)*12-20 = 1000 
 // 如果將gridColumnWidth設置為60px，就是盛名的960網格系統 
 //-----------------------------------------------------
-$gridColumns:                     12 !default; // Total number of columns 
-$gridColumnWidth:                 65px !default; // Width of a single column 
-$gridGutter:                      20px !default; // Width of the gutter 
-$gridSystemWidth:                 $gridColumns * ($gridColumnWidth + $gridGutter); //grid system width 
+$gridColumns:                     12 !default;// Total number of columns 
+$gridColumnWidth:                 65px !default;// Width of a single column 
+$gridGutter:                      20px !default;// Width of the gutter 
+$gridSystemWidth:                 $gridColumns * ($gridColumnWidth + $gridGutter);//grid system width 
 
 
 // percent layout setting 
 // 百分比佈局的變數設置 
 //-----------------------------------------------------
-$gridPercentSwitch:               false !default; // 預設為固定寬度佈局，設置為true為百分比 
-$gridRealWidth:                   $gridSystemWidth !default; 
-$gridGutterPercent:               percentage($gridGutter / $gridSystemWidth) !default; 
+$gridPercentSwitch:               false !default;// 預設為固定寬度佈局，設置為true為百分比 
+$gridRealWidth:                   $gridSystemWidth !default;
+$gridGutterPercent:               percentage($gridGutter / $gridSystemWidth) !default;
 
-@if $gridPercentSwitch{ 
-  $gridRealWidth: 100%; 
+@if $gridPercentSwitch{
+  $gridRealWidth: 100%;
 } 
 
 // ie6/7 fluid layout bug: http://tylertate.com/blog/2012/01/05/subpixel-rounding.html 
 // ie6/7 getWidth($i, true, $correction) 
-$gridMinWidth:                    1000 !default; 
-$gridCorrection:                  0.5 / $gridMinWidth * 100 * 1%; 
+$gridMinWidth:                    1000 !default;
+$gridCorrection:                  0.5 / $gridMinWidth * 100 * 1%;
 
 
 // margin value 
 //-----------------------------------------------------
 // if fluid layout the value is $gridGutterPercent 
 // if fixed layout the value is $gridGutter 
-$gridMarginValue:                 if($gridPercentSwitch, $gridGutterPercent, $gridGutter) !default; 
+$gridMarginValue:                 if($gridPercentSwitch, $gridGutterPercent, $gridGutter) !default;
 
 
 // true for grid class(.span1, .span2...) 
 // ---------------------------------------- 
-$gridSpanSwitch:                  false !default; 
+$gridSpanSwitch:                  false !default;
 
 
 // A Function to calculate width: 
 // 這個函數幾乎是blankwork的靈魂，用來計算寬度的 
 // Example usage: (based on default values​​) 
 // getWidth(3, false) would return 240px 
-// getWidth(3) or getWidth(3, true) would return 220px; 
-// and plain getWidth() or getWidth would return 940px; 
+// getWidth(3) or getWidth(3, true) would return 220px;
+// and plain getWidth() or getWidth would return 940px;
 @function getWidth($i:$gridColumns, $onlyInnerWidth:true, $subtract:0) { 
-  // First set a default return value 
-  $return: (($gridColumnWidth + $gridGutter) * $i / $gridSystemWidth) * $gridRealWidth - $subtract !default; 
+  // First set a default return value 
+  $return: (($gridColumnWidth + $gridGutter) * $i / $gridSystemWidth) * $gridRealWidth - $subtract !default;
 
-  // If we want to get only the inner width (without gutter) 
-  @if $onlyInnerWidth == true { 
-    // Return the total calculated width, without the margins 
-    // If the second parameter of this function is not specified 
-    // This is what is going to be returned 
-    $return: ((($gridColumnWidth + $gridGutter) * $i - $gridGutter) / $gridSystemWidth) * $gridRealWidth - $subtract; 
-  } 
+  // If we want to get only the inner width (without gutter) 
+  @if $onlyInnerWidth == true { 
+    // Return the total calculated width, without the margins 
+    // If the second parameter of this function is not specified 
+    // This is what is going to be returned 
+    $return: ((($gridColumnWidth + $gridGutter) * $i - $gridGutter) / $gridSystemWidth) * $gridRealWidth - $subtract;
+  } 
 
-  @return $return; 
+  @return $return;
 } 
 
 
 // A Function to calculate percent width: 
 // Example:getPercent(3,6) 
 @function getPercent($i, $container-columns:$gridColumns, $onlyInnerWidth:false, $subtract:0) { 
-  $percentage: percentage($i / $container-columns); 
-   
-  @if $onlyInnerWidth == true { 
-    $width: $i * $gridColumnWidth + ($i - 1) * $gridGutter; 
-    $container-width: $container-columns * $gridColumnWidth + ($container-columns - 1) * $gridGutter; 
-    $percentage: percentage($width / $container-width); 
-  } 
-   
-  @return $percentage - $subtract; 
+  $percentage: percentage($i / $container-columns);
+   
+  @if $onlyInnerWidth == true { 
+    $width: $i * $gridColumnWidth + ($i - 1) * $gridGutter;
+    $container-width: $container-columns * $gridColumnWidth + ($container-columns - 1) * $gridGutter;
+    $percentage: percentage($width / $container-width);
+  } 
+   
+  @return $percentage - $subtract;
 } 
 
 
 // span or column's gutter 
 %margin-gutter{ 
-  margin-right: $gridMarginValue; 
+  margin-right: $gridMarginValue;
 
-  @if $gridPercentSwitch and $lte7{ 
-    *margin-right: $gridMarginValue - $gridCorrection; 
-  } 
+  @if $gridPercentSwitch and $lte7{ 
+    *margin-right: $gridMarginValue - $gridCorrection;
+  } 
 } 
 
 // Column Mixin: 
@@ -101,15 +101,15 @@ $gridSpanSwitch:                  false !default;
 // Default Column Count: Max Column Count 
 // Padding (explained below): 0 
 @mixin column($i: $gridColumns, $subtract:0) { 
-  @extend %float; 
-  @extend %margin-gutter; 
+  @extend %float;
+  @extend %margin-gutter;
 
-  $getWidth: getWidth($i, true, $subtract); // Use the width calculation function to get the width 
-  width: $getWidth; 
+  $getWidth: getWidth($i, true, $subtract);// Use the width calculation function to get the width 
+  width: $getWidth;
 
-  @if $gridPercentSwitch and $lte7{ 
-    *width:$getWidth - $gridCorrection; 
-  } 
+  @if $gridPercentSwitch and $lte7{ 
+    *width:$getWidth - $gridCorrection;
+  } 
 } 
 
 // wrapper 
@@ -118,39 +118,39 @@ $gridSpanSwitch:                  false !default;
 // we shouldhave the flexibility 
 // So wrapper( column count, center ?, subtract) 
 @mixin wrapper($i: $gridColumns, $center:true, $subtract:0) { 
-  @extend %clearfix; 
-   
-  // Because this is a wrapper, we don't need the outer gutter - we need the full width 
-  $getWrapperWidth: getWidth($i, false); 
-  // In case there is a need to subtract the wrapper 
-  $wrapperWidth: $getWrapperWidth - $subtract; 
-  width:$wrapperWidth; 
+  @extend %clearfix;
+   
+  // Because this is a wrapper, we don't need the outer gutter - we need the full width 
+  $getWrapperWidth: getWidth($i, false);
+  // In case there is a need to subtract the wrapper 
+  $wrapperWidth: $getWrapperWidth - $subtract;
+  width:$wrapperWidth;
 
-  // If we want the wrapper to be centered (by default we do) 
-  @if $center == true { 
-    margin-left:auto; 
-    margin-right:auto; 
-  } 
+  // If we want the wrapper to be centered (by default we do) 
+  @if $center == true { 
+    margin-left:auto;
+    margin-right:auto;
+  } 
 } 
 
 
 // alpha & omega 
 //-----------------------------------------------------
 @mixin alpha{ 
-  margin-left:0; 
+  margin-left:0;
 } 
 @mixin omega{ 
-  margin-right:0; 
+  margin-right:0;
 } 
 
 
 // prepend & append 
 //-----------------------------------------------------
 @mixin prepend($i:1, $subtract:0) { 
-  margin-left: getWidth($i,false,$subtract); 
+  margin-left: getWidth($i,false,$subtract);
 } 
 @mixin append($i:1, $subtract:0) { 
-  margin-right: getWidth($i,false,$subtract); 
+  margin-right: getWidth($i,false,$subtract);
 } 
 
 
@@ -158,16 +158,16 @@ $gridSpanSwitch:                  false !default;
 // span的class循環輸出，通過變數$gridSpanSwitch來控制是否輸出 
 //-----------------------------------------------------
 @if $gridSpanSwitch { 
-  @for $i from 1 through $gridColumns { 
-    .span#{$i} { 
-      @extend %float-left; 
-      @extend %margin-gutter; 
-       
-      width:getWidth($i); 
-       
-      @if $gridPercentSwitch and $lte7{ 
-        *width:getWidth($i) - $gridCorrection; 
-      } 
-    } 
-  } 
+  @for $i from 1 through $gridColumns { 
+    .span#{$i} { 
+      @extend %float-left;
+      @extend %margin-gutter;
+       
+      width:getWidth($i);
+       
+      @if $gridPercentSwitch and $lte7{ 
+        *width:getWidth($i) - $gridCorrection;
+      } 
+    } 
+  } 
 }
