@@ -6,24 +6,19 @@
 
 // 開關設置
 //-----------------------------------------------------
-$lte7: true !default; //是否相容ie6-7
-$filter: false !default; //是否為ie6-8開啟css3濾鏡相容，常用於漸層背景
-$printStyleSwitch: false !default; //是否開啟列印樣式
+$lte7             : true !default; //是否相容ie6-7
+$filter           : false !default; //是否為ie6-8開啟css3濾鏡相容，常用於漸層背景
+$printStyleSwitch : false !default; //是否開啟列印樣式
 
 
 // font相關
 //-----------------------------------------------------
-$baseFontSize: 14px !default;
-$baseLineHeight: 1.5 !default;
-$baseFontFamily: "Helvetica Neue", Helvetica, Tahoma, sans-serif !default;
-$fontCn: "SimSun"; //宋體
-$fontYaHei: "Microsoft Yahei"; //微軟雅黑
-$fontHeiTi: "SimHei"; //黑體
-
-
-// 元素上下間距
-//-----------------------------------------------------
-$baseGap: 20px !default;
+$baseFontSize   : 14px !default;
+$baseLineHeight : 1.5 !default;
+$baseFontFamily : Helvetica, Tahoma, Verdana, sans-serif !default;
+$fontMing       : 新細明體, "MingLiU"; //新細明體
+$fontJhengHei   : 微軟正黑體, 'Microsoft JhengHei'; //微軟正黒體
+$fontHeiTi      : 'Heiti TC'; //黑體
 
 
 // 基本顏色
@@ -33,64 +28,86 @@ $baseGap: 20px !default;
 // opacify($color, $amount)
 // mix($color1, $color2[, $amount])
 //-----------------------------------------------------
-$black: #000 !default;
-$grayDarker: #333 !default;
-$grayDark: #999 !default;
-$gray: #ccc !default;
-$grayLight: #f5f5f5 !default;
-$white: #fff !default;
+$white       : #ffffff !default;
+$grayLighter : #f4f4f4 !default;
+$grayLight   : #f5f5f5 !default;
+$gray        : #cccccc !default;
+$grayDark    : #999999 !default;
+$grayDarker  : #333333 !default;
+$black       : #000000 !default;
 
-$red: #cc3300 !default;
-$blue: #00A3CF !default;
-$blueDark: #0064cd !default;
-$orange: #F47837 !default;
-$green: #51B148 !default;
-$yellow: #ffc40d !default;
-$pink: #c3325f !default;
-$purple: #7a43b6 !default;
+$black-5   : darken(#fff, 5%) !default;
+$black-10  : darken(#fff, 10%) !default;
+$black-15  : darken(#fff, 15%) !default;
+$black-20  : darken(#fff, 20%) !default;
+$black-25  : darken(#fff, 25%) !default;
+$black-30  : darken(#fff, 30%) !default;
+$black-35  : darken(#fff, 35%) !default;
+$black-40  : darken(#fff, 40%) !default;
+$black-45  : darken(#fff, 45%) !default;
+$black-50  : darken(#fff, 50%) !default;
+$black-55  : darken(#fff, 55%) !default;
+$black-60  : darken(#fff, 60%) !default;
+$black-65  : darken(#fff, 65%) !default;
+$black-70  : darken(#fff, 70%) !default;
+$black-75  : darken(#fff, 75%) !default;
+$black-80  : darken(#fff, 80%) !default;
+$black-85  : darken(#fff, 85%) !default;
+$black-90  : darken(#fff, 90%) !default;
+$black-95  : darken(#fff, 95%) !default;
+$black-100 : darken(#fff, 100%) !default;
 
-$primary: #0078E7 !default;//主色
+$red      : #cc3300 !default;
+$blue     : #00A3CF !default;
+$blueDark : #0064cd !default;
+$orange   : #F47837 !default;
+$green    : #51B148 !default;
+$yellow   : #ffc40d !default;
+$pink     : #c3325f !default;
+$purple   : #7a43b6 !default;
+
+$primary  : #0078E7 !default;//主色
 
 
 // link
 //-----------------------------------------------------
 // 如果只有一個值則滑過的值為這個值的darken 5%，如果
 // 有兩個值則第二個值為滑過的值
-$linkColor: #08c !default;
+$linkColor : #08c !default;
 
 
 // scaffolding
 //-----------------------------------------------------
-$bodyBgColor: $white !default;
-$textColor: $grayDarker !default;
+$bodyBgColor : white !default;
+$textColor   : $grayDarker !default;
 
 
 // placeholder
 //-----------------------------------------------------
 // 變數分別為：是否輸出表單的佔位符placeholder樣式，文本色
-$placeholder: true $gray !default;
+$placeholder : true $gray !default;
 
 
 // 交互配色
 // 警告，錯誤，成功，提示
 //-----------------------------------------------------
 // 每個變數都有三個顏色值，分別為：文本色，背景色，邊框色
-$warningColor: #514721 #FFF6BF #FFD324 !default;
-$errorColor: #8A1F11 #FBE3E4 #FBC2C4 !default;
-$successColor: #264409 #E6EFC2 #C6D880 !default;
-$infoColor: #205791 #D5EDF8 #92CAE4 !default;
+$warningColor : #514721 #FFF6BF #FFD324 !default;
+$errorColor   : #8A1F11 #FBE3E4 #FBC2C4 !default;
+$successColor : #264409 #E6EFC2 #C6D880 !default;
+$infoColor    : #205791 #D5EDF8 #92CAE4 !default;
 
 
 // radius
 //-----------------------------------------------------
-$baseRadius: 5px !default;
-$smallRadius: 3px !default;
+$baseRadius:        5px !default;
+$smallRadius:       3px !default;
 
 
 // z-index
 //-----------------------------------------------------
-$zindexDropdown: 1000 !default;
-$zindexFixedTopbar: 1010 !default;
-$zindexTooltip: 1020 !default;
-$zindexAlert: 1030 !default;
-$zindexModal: 1100 !default;
+$zindexDropdown    : 1000 !default;
+$zindexFixedTopbar : 1010 !default;
+$zindexTooltip     : 1020 !default;
+$zindexAlert       : 1030 !default;
+$zindexModal       : 1100 !default;

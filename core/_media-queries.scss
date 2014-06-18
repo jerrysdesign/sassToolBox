@@ -44,48 +44,42 @@
 // screen
 //----------------------------------------------------- 
 
-@mixin screen($resMin, $resMax)
-{
+@mixin screen($resMin, $resMax) {
   @media screen and (min-width: $resMin) and (max-width: $resMax)
   {
     @content;
   }
 }
 
-@mixin max-screen($res)
-{
+@mixin max-screen($res) {
   @media screen and (max-width: $res)
   {
     @content;
   }
 }
 
-@mixin min-screen($res)
-{
+@mixin min-screen($res) {
   @media screen and (min-width: $res)
   {
     @content;
   }
 }
 
-@mixin screen-height($resMin, $resMax)
-{
+@mixin screen-height($resMin, $resMax) {
   @media screen and (min-height: $resMin) and (max-height: $resMax)
   {
     @content;
   }
 }
 
-@mixin max-screen-height($res)
-{
+@mixin max-screen-height($res) {
   @media screen and (max-height: $res)
   {
     @content;
   }
 }
 
-@mixin min-screen-height($res)
-{
+@mixin min-screen-height($res) {
   @media screen and (min-height: $res)
   {
     @content;
@@ -99,14 +93,12 @@
 // Based on bourbon hidpi-media-queries file (https://github.com/thoughtbot/bourbon/blob/master/app/assets/stylesheets/css3/_hidpi-media-query.scss)
 // HIDPI mixin. Default value set to 1.3 to target Google Nexus 7 (http://bjango.com/articles/min-device-pixel-ratio/)
 
-@mixin hdpi($ratio: 1.3)
-{
+@mixin hdpi($ratio: 1.3) {
   @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
   only screen and (min--moz-device-pixel-ratio: $ratio),
   only screen and (-o-min-device-pixel-ratio: #{$ratio}/1),
   only screen and (min-resolution: #{round($ratio*96)}dpi),
-  only screen and (min-resolution: #{$ratio}dppx)
-  {
+  only screen and (min-resolution: #{$ratio}dppx) {
     @content;
   }
 }
@@ -114,25 +106,20 @@
 // iphone
 //----------------------------------------------------- 
 
-@mixin iphone3($orientation: all)
-{
+@mixin iphone3($orientation: all) {
   $deviceMinWidth: 320px;
   $deviceMaxWidth: 480px;
   $devicePixelRatio: 1;
 
-  @if $orientation == all
-  {
+  @if $orientation == all {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio)
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) {
       @content;
     }
   }
-  @else
-  {
+  @else {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation})
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation}) {
       @content;
     }
   }
@@ -141,26 +128,21 @@
 // iphone-retina
 //----------------------------------------------------- 
 
-@mixin iphone4($orientation: all)
-{
+@mixin iphone4($orientation: all) {
   $deviceMinWidth: 320px;
   $deviceMaxWidth: 480px;
   $devicePixelRatio: 2;
   $deviceAspectRatio: '2/3';
 
-  @if $orientation == all
-  {
+  @if $orientation == all {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio)
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) {
       @content;
     }
   }
-  @else
-  {
+  @else {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: 2/3) and (orientation:#{$orientation})
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: 2/3) and (orientation:#{$orientation}) {
       @content;
     }
   }
@@ -169,26 +151,21 @@
 // iphone-5
 //-----------------------------------------------------
 
-@mixin iphone5($orientation: all)
-{
+@mixin iphone5($orientation: all) {
   $deviceMinWidth: 320px;
   $deviceMaxWidth: 568px;
   $devicePixelRatio: 2;
   $deviceAspectRatio: '40/71';
 
-  @if $orientation == all
-  {
+  @if $orientation == all {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio)
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) {
       @content;
     }
   }
-  @else
-  {
+  @else {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) and (orientation:#{$orientation})
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (device-aspect-ratio: $deviceAspectRatio) and (orientation:#{$orientation}) {
       @content;
     }
   }
@@ -197,23 +174,19 @@
 // ipads (all)
 //-----------------------------------------------------
 
-@mixin ipad($orientation: all)
-{
+@mixin ipad($orientation: all) {
   $deviceMinWidth: 768px;
   $deviceMaxWidth: 1024px;
 
-  @if $orientation == all
-  {
+  @if $orientation == all {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
     {
       @content;
     }
   }
-  @else
-  {
+  @else {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (orientation:#{$orientation})
-    {
+    and (orientation:#{$orientation}) {
       @content;
     }
   }
@@ -222,25 +195,20 @@
 // ipad-retina
 //-----------------------------------------------------
 
-@mixin ipad-retina($orientation: all)
-{
+@mixin ipad-retina($orientation: all) {
   $deviceMinWidth: 768px;
   $deviceMaxWidth: 1024px;
   $devicePixelRatio: 2;
 
-  @if $orientation == all
-  {
+  @if $orientation == all {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio)
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) {
       @content;
     }
   }
-  @else
-  {
+  @else {
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
-    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation})
-    {
+    and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation}) {
       @content;
     }
   }

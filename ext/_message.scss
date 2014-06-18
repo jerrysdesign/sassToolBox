@@ -6,18 +6,18 @@
 
 // 變數
 //-----------------------------------------------------
-$msgIconSwitch:     true !default;// 是否啟用icon背景，背景圖片使用base64，ie8+支持
-$msgRadius:         0 !default; // 樣式圓角大小，設置為0將不產生圓角。
-$msgClassSwitch:    true false false false !default; //錯誤成功警告提示
+$msgIconSwitch  : true !default;// 是否啟用icon背景，背景圖片使用base64，ie8+支持
+$msgRadius      : 0 !default; // 樣式圓角大小，設置為0將不產生圓角。
+$msgClassSwitch : true false false false !default; //錯誤成功警告提示
 
 
 // mixin
 //-----------------------------------------------------
 // 基本樣式
-@mixin message-basic{
+@mixin message-basic {
   padding:8px;
   a{
-    text-decoration:underline;
+    text-decoration: underline;
   }
 
   @if $msgIconSwitch {
@@ -29,17 +29,17 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
     border-radius: $msgRadius;
   }
 }
-%message-basic{
+%message-basic {
   @include message-basic;
 }
 
 // 配色方案，包括文本色，背景色，邊框顏色
 @mixin message-skin($textColor, $bgColor, $borderColor ) {
-  background-color:$bgColor;
-  border:2px solid $borderColor;
+  background-color: $bgColor;
+  border: 2px solid $borderColor;
   color: $textColor;
 
-  a{
+  a {
     color: $textColor;
   }
 }
@@ -48,7 +48,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 // 樣式
 //-----------------------------------------------------
 @if nth($msgClassSwitch, 1) {
-  .error{
+  .error {
     @extend %message-basic;
     @include message-skin(nth($errorColor,1), n​​th($errorColor,2), nth($errorColor,3));
     @if $msgIconSwitch {
@@ -58,7 +58,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 }
 
 @if nth($msgClassSwitch, 2) {
-  .success{
+  .success {
     @extend %message-basic;
     @include message-skin(nth($successColor,1), n​​th($successColor,2), nth($successColor,3));
     @if $msgIconSwitch {
@@ -68,7 +68,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 }
 
 @if nth($msgClassSwitch, 3) {
-  .warning{
+  .warning {
     @extend %message-basic;
     @include message-skin(nth($warningColor,1), n​​th($warningColor,2), nth($warningColor,3));
     @if $msgIconSwitch {
@@ -78,7 +78,7 @@ $msgClassSwitch:    true false false false !default; //錯誤成功警告提示
 }
 
 @if nth($msgClassSwitch, 4) {
-  .info{
+  .info {
     @extend %message-basic;
     @include message-skin(nth($infoColor,1), n​​th($infoColor,2), nth($infoColor,3));
     @if $msgIconSwitch{

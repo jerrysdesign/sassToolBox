@@ -15,39 +15,39 @@
 // 這裡設計的是1000px的佈局，每個柵格為65px，共12個，計算公式：(65+20)*12-20 = 1000 
 // 如果將gridColumnWidth設置為60px，就是盛名的960網格系統 
 //-----------------------------------------------------
-$gridColumns:                     12 !default;// Total number of columns 
-$gridColumnWidth:                 65px !default;// Width of a single column 
-$gridGutter:                      20px !default;// Width of the gutter 
-$gridSystemWidth:                 $gridColumns * ($gridColumnWidth + $gridGutter);//grid system width 
+$gridColumns     : 2 !default;// Total number of columns 
+$gridColumnWidth : 65px !default;// Width of a single column 
+$gridGutter      : 20px !default;// Width of the gutter 
+$gridSystemWidth : $gridColumns * ($gridColumnWidth + $gridGutter);//grid system width 
 
 
 // percent layout setting 
 // 百分比佈局的變數設置 
 //-----------------------------------------------------
-$gridPercentSwitch:               false !default;// 預設為固定寬度佈局，設置為true為百分比 
-$gridRealWidth:                   $gridSystemWidth !default;
-$gridGutterPercent:               percentage($gridGutter / $gridSystemWidth) !default;
+$gridPercentSwitch : false !default;// 預設為固定寬度佈局，設置為true為百分比 
+$gridRealWidth     : $gridSystemWidth !default;
+$gridGutterPercent : percentage($gridGutter / $gridSystemWidth) !default;
 
-@if $gridPercentSwitch{
-  $gridRealWidth: 100%;
+@if $gridPercentSwitch {
+  $gridRealWidth : 100%;
 } 
 
 // ie6/7 fluid layout bug: http://tylertate.com/blog/2012/01/05/subpixel-rounding.html 
 // ie6/7 getWidth($i, true, $correction) 
-$gridMinWidth:                    1000 !default;
-$gridCorrection:                  0.5 / $gridMinWidth * 100 * 1%;
+$gridMinWidth   : 1000 !default;
+$gridCorrection : 0.5 / $gridMinWidth * 100 * 1%;
 
 
 // margin value 
 //-----------------------------------------------------
 // if fluid layout the value is $gridGutterPercent 
 // if fixed layout the value is $gridGutter 
-$gridMarginValue:                 if($gridPercentSwitch, $gridGutterPercent, $gridGutter) !default;
+$gridMarginValue : if($gridPercentSwitch, $gridGutterPercent, $gridGutter) !default;
 
 
 // true for grid class(.span1, .span2...) 
 // ---------------------------------------- 
-$gridSpanSwitch:                  false !default;
+$gridSpanSwitch : false !default;
 
 
 // A Function to calculate width: 
@@ -91,7 +91,7 @@ $gridSpanSwitch:                  false !default;
 %margin-gutter{ 
   margin-right: $gridMarginValue;
 
-  @if $gridPercentSwitch and $lte7{ 
+  @if $gridPercentSwitch and $lte7 { 
     *margin-right: $gridMarginValue - $gridCorrection;
   } 
 } 
@@ -107,8 +107,8 @@ $gridSpanSwitch:                  false !default;
   $getWidth: getWidth($i, true, $subtract);// Use the width calculation function to get the width 
   width: $getWidth;
 
-  @if $gridPercentSwitch and $lte7{ 
-    *width:$getWidth - $gridCorrection;
+  @if $gridPercentSwitch and $lte7 { 
+    *width: $getWidth - $gridCorrection;
   } 
 } 
 
@@ -124,23 +124,23 @@ $gridSpanSwitch:                  false !default;
   $getWrapperWidth: getWidth($i, false);
   // In case there is a need to subtract the wrapper 
   $wrapperWidth: $getWrapperWidth - $subtract;
-  width:$wrapperWidth;
+  width: $wrapperWidth;
 
   // If we want the wrapper to be centered (by default we do) 
   @if $center == true { 
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
   } 
 } 
 
 
 // alpha & omega 
 //-----------------------------------------------------
-@mixin alpha{ 
-  margin-left:0;
+@mixin alpha { 
+  margin-left: 0;
 } 
-@mixin omega{ 
-  margin-right:0;
+@mixin omega { 
+  margin-right: 0;
 } 
 
 
@@ -163,7 +163,7 @@ $gridSpanSwitch:                  false !default;
       @extend %float-left;
       @extend %margin-gutter;
        
-      width:getWidth($i);
+      width: getWidth($i);
        
       @if $gridPercentSwitch and $lte7{ 
         *width:getWidth($i) - $gridCorrection;

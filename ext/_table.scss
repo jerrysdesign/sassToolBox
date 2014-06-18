@@ -7,27 +7,27 @@
 
 // 變數
 //---------------------------------
-$zebraLte8: false !default; //斑馬線效果是否支援ie8，如果支援請在tr裡面添加class odd
-$tableBgColor: transparent !default; // overall background-color
-$tableBgColorEven: #f9f9f9 !default; // for striping zebra
-$tableBgColorHover: #e9f5ff !default; // for hover
-$tableBorderColor: $gray !default; // table and cell border
-$tableThBgColor: #f4f4f4 !default;//th背景色
-$tableColThWidth: 80px !default;//左邊第一欄為th表格的th寬度
-$tableCellPadding: 8px !default;//單元格的padding
-$tableRadius: $baseRadius !default;//圓角大小
-$tableResetSwitch: true !default;//是否已經有了table的重置border-collapse: collapse;border-spacing: 0;
+$zebraLte8         : false !default;       //斑馬線效果是否支援ie8，如果支援請在tr裡面添加class odd
+$tableBgColor      : transparent !default; // overall background-color
+$tableBgColorEven  : #f9f9f9 !default;     // for striping zebra
+$tableBgColorHover : #e9f5ff !default;     // for hover
+$tableBorderColor  : $gray !default;       // table and cell border
+$tableThBgColor    : #f4f4f4 !default;     //th背景色
+$tableColThWidth   : 80px !default;        //左邊第一欄為th表格的th寬度
+$tableCellPadding  : 8px !default;         //單元格的padding
+$tableRadius       : $baseRadius !default; //圓角大小
+$tableResetSwitch  : true !default;        //是否已經有了table的重置border-collapse: collapse;border-spacing: 0;
 
-//各个table开关设置
-$tableBorderSwitch:              true !default;
-$tableListSwitch:                false !default;
-$tableColThSwitch:               false !default;
-$tableRadiusSwitch:              false !default;
-$tableLineSwitch:                false !default;
-$tableStripedSwitch:             false !default;
-$tableHoverSwitch:               false !default;
-$tableCondensedSwitch:           false !default;
-$tableStatusSwitch:              false !default;
+//各個table開關設置
+$tableBorderSwitch    : true !default;
+$tableListSwitch      : false !default;
+$tableColThSwitch     : false !default;
+$tableRadiusSwitch    : false !default;
+$tableLineSwitch      : false !default;
+$tableStripedSwitch   : false !default;
+$tableHoverSwitch     : false !default;
+$tableCondensedSwitch : false !default;
+$tableStatusSwitch    : false !default;
 
 
 //table mixin
@@ -121,7 +121,7 @@ $tableStatusSwitch:              false !default;
 @mixin table-thead($thBgColor:$primary,$thTextColor:$white) {
   th{
     background-color: $thBgColor;
-    color:$thTextColor;
+    color: $thTextColor;
     font-weight: normal;
   }
 }
@@ -137,36 +137,36 @@ $tableStatusSwitch:              false !default;
     border-collapse: collapse;
     border-spacing: 0;
   }
-  th,td{
+  th,td {
     padding: $tableCellPadding;
   }
-  thead th{
+  thead th {
     text-align: left;
   }
 }
 
-.table-fixed{
+.table-fixed {
   table-layout: fixed;
 }
 
-@if $tableBorderSwitch{
-  .table-border{
+@if $tableBorderSwitch {
+  .table-border {
     @include table-border;
   }
 }
 
-@if $tableListSwitch{
-  .table-list{
+@if $tableListSwitch {
+  .table-list {
     @include table-thead;
     td{
-      border-bottom:1px dashed $tableBorderColor;
+      border-bottom: 1px dashed $tableBorderColor;
     }
     @include zebra-stripe;
     @include tr-hover;
   }  
 }
 
-@if $tableCondensedSwitch{
+@if $tableCondensedSwitch {
   .table-condensed {
     th,
     td {
@@ -175,28 +175,28 @@ $tableStatusSwitch:              false !default;
   }  
 }
 
-@if $tableLineSwitch{
-  .table-line{
-    th,td{
-      border-top:1px solid $tableBorderColor;
+@if $tableLineSwitch {
+  .table-line {
+    th,td {
+      border-top: 1px solid $tableBorderColor;
     }
     thead:first-child tr:first-child th,
     thead:first-child tr:first-child td {
       border-top: 0;
     }
     @if $lte7 {
-      _border-bottom:1px solid $tableBorderColor;
+      _border-bottom: 1px solid $tableBorderColor;
     }
   }  
 }
 
 @if $tableRadiusSwitch{
   .table-radius {
-    border-top:1px solid $tableBorderColor;
-    border-left:1px solid $tableBorderColor;
+    border-top: 1px solid $tableBorderColor;
+    border-left: 1px solid $tableBorderColor;
     th,td{
-      border-right:1px solid $tableBorderColor;
-      border-bottom:1px solid $tableBorderColor;
+      border-right: 1px solid $tableBorderColor;
+      border-bottom: 1px solid $tableBorderColor;
     }
     @include table-radius($tableRadius);
   }  
@@ -214,10 +214,10 @@ $tableStatusSwitch:              false !default;
   }  
 }
 
-@if $tableColThSwitch{
-  .table-col-th{
+@if $tableColThSwitch {
+  .table-col-th {
     @include table-border;
-    th{
+    th {
       background-color: $tableThBgColor;
       width: $tableColThWidth;
       vertical-align: middle;

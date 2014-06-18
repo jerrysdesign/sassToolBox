@@ -4,18 +4,18 @@
 //-----------------------------------------------------
 
 // ul/ol has list style
-ul.has-style{
+ul.has-style {
   @extend %ul-has-style;
 }
 // li float
-ul.inline-float{
+ul.inline-float {
   @extend %clearfix;
   li{
     @include float;
   }
 }
 // li inline-block
-ul.inline-block{
+ul.inline-block {
   li{
     @extend %inline-block; 
     margin-right: 8px;
@@ -26,18 +26,18 @@ ul.inline-block{
 }
 
 // 浮動及閉合浮動
-.fl{
+.fl {
   @extend %float;
 }
-.fr{
+.fr {
   @include float(right);
 }
-.clearfix{
+.clearfix {
   @extend %clearfix;
 }
 
 // 浮動及閉合浮動
-.hidden{
+.hidden {
   @extend %hidden;
 }
 .visually-hidden {
@@ -45,19 +45,19 @@ ul.inline-block{
 }
 
 // text-align:left/right/center
-.tar{
+.tar {
   text-align: right;
 }
-.tac{
+.tac {
   text-align: center;
 }
 
 // 圖片替換文字
-.ir{
+.ir {
   @extend %ir;
 }
 
 // 灰色
-.gray{
+.gray {
   color:$gray;
 }

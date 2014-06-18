@@ -10,15 +10,15 @@
 
 // 各個瀏覽器的屬性前綴，true表示開啟，false表示不開啟
 //-----------------------------------------------------
-$prefixForWebkit:     true !default;
-$prefixForMozilla:    true !default;
-$prefixForMicrosoft:  true !default;
-$prefixForOpera:      false !default; //opera從版本15開始轉向webkit，所以預設為false，不輸出o前綴
-$prefixNo:            true !default;
+$prefixForWebkit    : true !default;
+$prefixForMozilla   : true !default;
+$prefixForMicrosoft : true !default;
+$prefixForOpera     : false !default; //opera從版本15開始轉向webkit，所以預設為false，不輸出o前綴
+$prefixNo           : true !default;
 
 // 用於flex的兼容變數
-$flexOld:             true !default; //09版本用於兼容移動端，-webkit前綴
-$flexMid:             true !default; //用於ie10 -ms前綴
+$flexOld : true !default; //09版本用於兼容移動端，-webkit前綴
+$flexMid : true !default; //用於ie10 -ms前綴
 
 
 // prefixer
@@ -28,7 +28,7 @@ $flexMid:             true !default; //用於ie10 -ms前綴
 @mixin prefixer($property, $value, $prefixes: o webkit) {
   @each $prefix in $prefixes {
     @if $prefix == webkit and $prefixForWebkit == true {
-      -webkit-#{$property}: $value;
+    -webkit-#{$property}: $value;
     }
     @else if $prefix == moz and $prefixForMozilla == true {
       -moz-#{$property}: $value;
