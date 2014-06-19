@@ -21,6 +21,11 @@ $fontJhengHei   : 微軟正黑體, 'Microsoft JhengHei'; //微軟正黒體
 $fontHeiTi      : 'Heiti TC'; //黑體
 
 
+// 元素上下間距
+//-----------------------------------------------------
+$baseGap: 20px !default;
+
+
 // 基本顏色
 // color function : http://sass-lang.com/docs/yardoc/Sass/Script/Functions.html
 // lighten($color, $amount)

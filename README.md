@@ -1,6 +1,6 @@
 #sassToolBox
 
-sassToolBox參考了[compass](http://compass-style.org/)和[bourbon](http://bourbon.io/) sass Library，根據項目實務，歸納總結而成，並持續更新中...
+sassToolBox參考了[compass](http://compass-style.org/)與[bourbon](http://bourbon.io/) 兩大sass Library，根據項目實務，歸納總結而成，並持續更新中...
 
 sassToolBox提供了一些基礎和常用的東西，基於它你可以擴展出很多組件等，如果你對這個有興趣，可以參考下基於sassToolBox的[Jerry](http://xxx.xx)建構中。
 

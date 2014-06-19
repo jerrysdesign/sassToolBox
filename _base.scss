@@ -21,3 +21,12 @@
 @import "core/mixin";
 @import "core/grid";
 @import "core/reset";
+
+// 導入ext中的基礎文件
+//-----------------------------------------------------
+@import "ext/btn";
+@import "ext/form";
+@import "ext/helper";
+@import "ext/message";
+@import "ext/table";
+@import "ext/typography";

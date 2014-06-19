@@ -1,3 +1,5 @@
+// 使用方式:https://github.com/paranoida/sass-mediaqueries
+
 //----------------------------------------------------- 
 // media queries scss
 // Author: Rafal Bromirski
@@ -45,43 +47,37 @@
 //----------------------------------------------------- 
 
 @mixin screen($resMin, $resMax) {
-  @media screen and (min-width: $resMin) and (max-width: $resMax)
-  {
+  @media screen and (min-width: $resMin) and (max-width: $resMax) {
     @content;
   }
 }
 
 @mixin max-screen($res) {
-  @media screen and (max-width: $res)
-  {
+  @media screen and (max-width: $res) {
     @content;
   }
 }
 
 @mixin min-screen($res) {
-  @media screen and (min-width: $res)
-  {
+  @media screen and (min-width: $res) {
     @content;
   }
 }
 
 @mixin screen-height($resMin, $resMax) {
-  @media screen and (min-height: $resMin) and (max-height: $resMax)
-  {
+  @media screen and (min-height: $resMin) and (max-height: $resMax) {
     @content;
   }
 }
 
 @mixin max-screen-height($res) {
-  @media screen and (max-height: $res)
-  {
+  @media screen and (max-height: $res) {
     @content;
   }
 }
 
 @mixin min-screen-height($res) {
-  @media screen and (min-height: $res)
-  {
+  @media screen and (min-height: $res) {
     @content;
   }
 }
@@ -210,6 +206,65 @@
     @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
     and (-webkit-device-pixel-ratio: $devicePixelRatio) and (orientation:#{$orientation}) {
       @content;
+    }
+  }
+}
+
+
+// RWD
+// The breakpoints to use
+// !default allows breakpoint to be set beforehand
+// see: http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variable_defaults_
+$breakpoint-phone    : 220px !default; // 240
+$breakpoint-smart    : 300px !default; // 320
+$breakpoint-tablet7  : 460px !default; // 480
+$breakpoint-tablet10 : 750px !default; // 768
+$breakpoint-pcsmall  : 960px !default; // 1024
+$breakpoint-pclarge  : 1260px !default;// 1280
+
+// convert to em's for better compatibility
+$phone    : toEm($breakpoint-phone);
+$smart    : toEm($breakpoint-smart);
+$tablet7  : toEm($breakpoint-tablet7);
+$tablet10 : toEm($breakpoint-tablet10);
+$pcsmall  : toEm($breakpoint-pcsmall);
+$pclarge  : toEm($breakpoint-pclarge);
+
+// breakpoint functionality, smaller devices take priority (mobile-first)
+@mixin breakpoint($media) {
+
+  @for $i from 1 through length($media) {
+    $device : nth($media, $i);
+
+    // Display the css for the default device
+    @if $device == "default" {
+      @content;
+    } @else {
+      // Or display the css for each given device using media Breakbpoints
+
+      @if ($device      == "phone") {
+        @media (min-width: $phone) and (max-width: $smart)
+        { @content;} }
+
+      @else if ($device == "smart") {
+        @media (min-width: $smart) and (max-width: $tablet7)
+        { @content;} }
+
+      @else if ($device == "tablet7") {
+        @media (min-width: $tablet7) and (max-width: $tablet10)
+        { @content;} }
+
+      @else if ($device == "tablet10") {
+        @media (min-width: $tablet10) and (max-width: $pcsmall)
+        { @content;} }
+
+      @else if ($device == "pcsmall") {
+        @media (min-width: $pcsmall) and (max-width: $pclarge)
+        { @content;} }
+
+      @else if ($device == "pclarge") {
+        @media (min-width: $pclarge)
+        { @content;} }
     }
   }
 }
