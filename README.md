@@ -8,7 +8,7 @@ sassToolBox提供了一些基礎和常用的東西，基於它你可以擴展出
 
 sassToolBox分核心文件和擴展文件兩種。其中核心文件提供一些基礎的樣式和`@mixin`，`%`等方便調用；而擴展文件則提供一些模塊的樣式，如`form`，`table`等。
 
-詳細使用文檔請移步：[sassToolBox](http://xxx.xx/sasstoolbox/index.html)
+詳細使用文檔請移步：[sassToolBox](http://sasstoolbox/index.html)
 
 ###核心文件調用
 第一種除提供基礎功能外，會產生一份reset樣式：
@@ -53,7 +53,7 @@ sassToolBox包括兩個集合文件（base，function）和兩個文件夾（cor
 負責響應式寬度判斷的文件。主要是對響應式佈局的一些寬度判斷，來自paranoida的[sass-mediaqueries](https://github.com/paranoida/sass-mediaqueries)。
 
 ####mixin
-負責功能方面的文件。這裡我們大概分成三個部分，一個是混合部分即mixin，一個是placeholder選擇器部分即%，最後就是我們的function函數部分。我們常用的include及extend當然就是來自於這裡了。
+負責功能方面的文件。這裡我們大概分成三個部分，一個是混合部分即mixin，一個是placeholder選擇器部分即%，最後就是我們的function函式部分。我們常用的include及extend當然就是來自於這裡了。
 
 ####grid
 負責網格系統的文件。預設為固定寬度佈局（1000px），可以通過設置$gridPercentSwitch為true來切換為流體佈局，也可以通過設置$gridSpanSwitch為true或false來控制是否輸出各個網格的class。
