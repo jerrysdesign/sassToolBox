@@ -33,12 +33,12 @@ $tableStatusSwitch    : false !default;
 //table mixin
 //---------------------------------
 @mixin table-radius($radius: $tableRadius) {
-  border-collapse: separate; // Done so we can round those corners!
+  border-collapse: separate; // Done so we can round those corners! // 這個可以變為圓角
   @if $lte7 {
-    *border-collapse: collapse; // IE7 can't round corners anyway
+    *border-collapse: collapse; // IE7 can't round corners anyway //總之IE7不能
   }
   border-radius: $radius;
-  // For first th/td in the first row in the first thead or tbody
+  // For first th/td in the first row in the first thead or tbody //對於在THEAD或TBODY中的第一行第一個 TH/TD 
   thead:first-child tr:first-child > th:first-child,
   tbody:first-child tr:first-child > td:first-child,
   tbody:first-child tr:first-child > th:first-child {
